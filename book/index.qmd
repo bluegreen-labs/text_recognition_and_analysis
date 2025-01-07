@@ -1,9 +1,5 @@
 # Preface {.unnumbered}
 
-This is a Quarto book.
+These are the materials for the course "Text recognition and analysis" given 6-7 Feb. 2025 at the Leibniz-Institut für Europäische Geschichte (IEG), Mainz. This book will serve as a reference during the course, and as a general introduction and reference for all things Handwritten Text Recognition / Optical Character Recognition (HTR/OCR).
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
-
-```{r}
-1 + 1
-```
+This reference gives an overview of the most common tools for historical (handwritten) text recognition. It will discuss the practical issues of such projects and how to resolve them efficiently and cost-effectively.

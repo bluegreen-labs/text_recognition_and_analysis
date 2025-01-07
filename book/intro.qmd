@@ -1,9 +1,22 @@
 # Introduction
 
-This is a book created from markdown and executable code.
+Understanding or translating large volumes of handwritten historical text is critical for historical analysis preservation of text, dissemination of knowledge and valorization of archived measurements and/or other scientific observations. However, reading and processing these large volumes of historical texts (at scale) is often difficult and time consuming. The automation of this process would therefore help in many historical analysis, data recovery and other digital preservation efforts.
 
-See @knuth84 for additional discussion of literate programming.
+Handwritten text recognition (HTR), contrary to optical character recognition (OCR) for typed texts, is a relatively complex process. Handwritten text (or old fonts) are surprisingly varied, with characters varying from one person (or book) to the next. These variations make HTR/OCR at times an intractable problem.
+
+## The HTR/OCR workflow
+
+Generally, an HTR/OCR workflow follows two general steps: line/text detection and text transcription. The former detects lines or written text, once detected these lines or text elements are evaluated one-by-one using a text transcription method and combined to form the final digital text document.
+
+HIGHLIGHT/REFERENCE THE COLOURED BITS IN THE FIGURE
 
 ```{r}
-1 + 1
+#| label: fig-workflow
+#| fig-cap: "The HTR/OCR workflow, from image acquisition to transcribed HTR/OCR results."
+#| fig-align: "left"
+#| out-width: "100%"
+#| echo: FALSE
+knitr::include_graphics("./images/HTR_workflow.drawio.svg")
 ```
+
+Depending on the framework or workflow different machine learning (ML) methods of text detection and transcription will be used. It is also key to understand that from a practical computer science perspective the problem of HTR/OCR is solved. Although algorithmic improvements will continue to be developed the current state-of-the-art machine learning (ML) methods perform well for many applications. Most of these algorithms, in the abstract, are relatively easy to understand and with today's software libraries and platforms even quicker to implement. I will briefly discuss various algorithms in section XYZ. A list of common frameworks and software is given in chapters XYZ.

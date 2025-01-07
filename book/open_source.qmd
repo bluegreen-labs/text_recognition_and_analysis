@@ -1,0 +1,43 @@
+---
+title: "Open Source"
+format: html
+---
+
+## (not) Open-source HTR/OCR
+
+### A solved methodology
+
+ So, what is holding back universal open-source HTR/OCR?
+
+Data is what holds back HTR in practice. Given the many variations in handwritten text ML algorithms, which are generally based on pattern recognition and not an understanding of the writing process, need to be trained ("see") a wide variety of handwritten text characters to be able to firstly translate similarly styled handwritten text, secondly potentially apply this to other adjacent styles. How close two documents are in writing style determines how well a trained model will perform on this task. Consequently, the more variations in handwritten text styles you train an ML algorithm on the easier it will be to transcribe a wide variety of text styles. In short, the bottleneck in automated transcription is gathering sufficient training data (for your use case).
+
+### Precious data
+
+Unsurprisingly, although the ML code might be open-source many large training datasets are often a close guarded secrets, as are interfaces to make the generation of such datasets. It can be argued that within the context of FAIR research practices ML code disseminated without the training data, or model parameters, for a particular study is decidedly not open-source. A similar argument has been made within the context of the recent flurry of supposedly open-source Large Language Models (LLMs), such as ChatGPT.
+
+The lack of access to both the trainig data, or a pre-trained model, limits the re-use of the model in a new context. One can not take a model and fine-tune it, i.e. let it "see" new text styles. In short, if you only have the underlying model code you always have to train a model from scratch (anew) using your own, often limited, dataset. This context is important to understand, as this is how various transcription platforms will keep you tied to their paying service. For example, Transkribus, although making the training process on data easy, using the open-source {pylaia} python library, will not allow you to export these model weights for offline use. These platforms, although providing a service, will also hold you hostage and will play on the network effect to enroll as many users as possible (i.e. sharing model weights internally - despite open-source claims of the framework). 
+
+This lock-in situation often comes at a cost, which does not scale in favour of users and their own contributions. Using the recovery of climate data as a worked example, a cost break-down shows that after trainig a custom model the extraction of tables (1 credit), and its fields (1 credit), and text detection and transcription (1 credit) will require 3 credits per page. For the 75K tables in the archive this would represent 225K Transkribus credits, with a data volume > 200GB requiring a Team plan requires 60 000 EURO, with the assumptions that no re-runs are required (i.e. perfect results). Experience teaches that ML is often iterative, and the true costs will probably be far higher (>150K EURO). Various vision APIs of Google or Amazon are cheaper, but don’t allow for training, and perform poor on cursive text.
+
+This shows that when tasks become large, with more complex workflows, alternatives might be cost effective. Despite the merits of some of these platforms in usability, how easy is it to escape the faustian bargain of platforms (or APIs) and their lock-in?
+
+
+## True open-source?
+
+As shown, foregoing interoperability and independence of your processing might betray you in the long run should data volumes increase. So what are the open-source options in this context?
+
+### eScriptorium + Kraken
+
+https://github.com/HTR-United/CREMMA-Medieval-LAT
+https://help.transkribus.org/data-preparation
+https://escriptorium.readthedocs.io/en/latest/quick-start/
+https://ub-mannheim.github.io/eScriptorium_Dokumentation/Training-with-eScriptorium-EN.html
+https://kraken.re
+https://github.com/OCR4all
+
+### Custom pipelines
+
+
+
+
+https://github.com/HTR-United/htr-united

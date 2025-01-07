@@ -1,0 +1,96 @@
+---
+title: "ML and computer vision"
+format: html
+---
+
+To understand the software (frameworks) for HTR/OCR solutions a brief introduction in ML and computer vision methods is required. This allows you to understand potential pitfalls better. As highlighted in Figure 2.1, there are two main ML components to HTR/OCR transcription workflows, a segmentation component and a text transcription component.
+
+## Computer vision
+
+Although computer vision methods, broadly, include ML methods the classical approaches differ significantly from ML methods and merit a small mention. Classic computer vision methods do not rely the machine learning methods as discussed below LINK, but rather on pixel (region) or image based transformation. These methods are often used in the pre-processing of images before a machine learning algorithm is applied. Classical examples are the removal of [uneven lighting across an image using adaptive histogram equalization](https://en.wikipedia.org/wiki/Adaptive_histogram_equalization), the detection of structuring elements such as [linear features using a Hough transform](https://en.wikipedia.org/wiki/Hough_transform), or the [adaptive thresholding of an image](https://en.wikipedia.org/wiki/Thresholding_(image_processing)) from colour to black-and-white only. These algorithms also serve an important role in the creation of additional data from a single reference dataset, through data augmentation LINK.
+
+```{r}
+#| label: fig-cv
+#| fig-cap: "Example of various thresholding methods as implemented in the OpenCV computer vision library (https://opencv.org)"
+#| fig-align: "center"
+#| out-width: "50%"
+#| echo: FALSE
+knitr::include_graphics("https://docs.opencv.org/3.4/ada_threshold.jpg")
+```
+
+## Machine Learning
+
+### Principles
+
+The machine learning components of the segmentation and transcriptions ML models rely on common ML algorithms and logic. To better understand these tasks, and how training methods influences the success of these models, I'll summarize some of these common building blocks. These are vulgarized and simplified descriptions to increase the broad understanding of these processes, for in depth discussions I refer to the linked articles in the text.
+
+::: callout-note
+Those familiar with machine learning methods can skip this section.
+:::
+
+#### Model training
+
+Machine learning models are 
+
+#### Data augmentation
+
+
+#### Detecting patterns: convolutional neural networks (CNN)
+
+The analysis of images within the context of machine learning often (but not exclusively) happens using a convolutional neural networks (CNNs). Conceptually a CNN can be see as taking sequential sections of the image and summarizing them (i.e. convolve them) using a function (a filter), to a lower aggregated resolution (FIGURE XYZ). This reduces the size of the image, while at the same time while extracting a certain characteristic using a filter function. One of the most simple functions would be taking the average value across a 3x3 window.
+
+```{r}
+#| label: fig-convolution
+#| fig-cap: "An example convolution of a 3x3 window across a larger blue image summarizing values (squares) to a smaller green image (by Kaivan Kamali at https://galaxyproject.org/)"
+#| fig-align: "center"
+#| out-width: "30%"
+#| echo: FALSE
+knitr::include_graphics("./images/Conv_no_padding_no_strides.gif")
+```
+
+It is important to understand this concept within the context of text recognition and classification tasks in general. It highlights the fact that ML algorithms do not "understand" (handwritten) text. Where people can make sense of handwritten text by understanding the flow, in addition to recognizing patterns, ML approaches focus on patterns, shapes or forms. However, some form of memory can be included using other methods.
+
+#### Memory: recurrent neural networks
+
+A second component to many recognition tasks is form of memory [RNN](https://en.wikipedia.org/wiki/Recurrent_neural_network) and [LSTM](https://en.wikipedia.org/wiki/Long_short-term_memory).
+
+#### Negative space: connectionist temporal classification
+
+In speech and written text much of the structure is defined not only by what is there, the spoken and written words, but also what is not there, the pauses and spacing. Taken to the extreme the expressionist / dadaist poem "Boem paukeslag" by [Paul van Ostaijen](https://en.wikipedia.org/wiki/Paul_van_Ostaijen) is an example of irregularity in text in typeset text. These irregularities or negative space in the pace of writing is another hurdle for text recognition algorithms.
+
+```{r}
+#| label: fig-boem-paukenslag
+#| fig-cap: "Boem paukenslag by Paul van Ostaijen"
+#| fig-align: "left"
+#| out-width: "30%"
+#| echo: FALSE
+knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/0/0c/Boempaukeslag.jpg")
+```
+
+These issues in detecting uneven spacing are addressed using the [connectionist temporal classification (CTC)](https://en.wikipedia.org/wiki/Connectionist_temporal_classification). This function is applied to the RNN and LSTM output, where it [collapses a sequence of recurring labels](https://distill.pub/2017/ctc/) through oversampling to its most likely reduced form while respecting spacing and coherence.
+
+```{r}
+#| label: fig-ctc-loss
+#| fig-cap: "A visualization of the CTC algorithm adapted from Hannun, 'Sequence Modeling with CTC', Distill, 2017. doi: 10.23915/distill.00008"
+#| fig-align: "left"
+#| out-width: "100%"
+#| echo: FALSE
+knitr::include_graphics("images/ctc_loss_Hannun.png")
+```
+
+#### Transformers
+
+
+
+### Implementation
+
+
+
+#### Segmentation
+
+- CNN
+
+#### Text Recognition
+
+- CNN + biLSTM + CTC
+- CNN + RNN + CTC
