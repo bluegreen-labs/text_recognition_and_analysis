@@ -1,0 +1,48 @@
+---
+title: "Basic R"
+format: html
+filters:
+  - webr
+---
+
+```{r}
+```
+
+### Basic expressions
+
+An expression is a set of commands that returns a value.
+
+Click `Run Code` to run the following R code.
+
+Execute this simple calculation.
+
+```{webr-r}
+50 * 2.2
+```
+
+Show the first rows of a table.
+
+```{webr-r}
+head(mtcars)
+```
+
+::: {.callout-note}
+## Exercise
+
+Show the last rows of the `mtcars` table.
+
+```{webr-r}
+# Add you code here
+```
+
+Your result should look like the plot below
+:::
+
+::: {.callout-tip collapse="true"}
+## Expected Result
+
+```{r}
+#| echo: false
+tail(mtcars)
+```
+:::
