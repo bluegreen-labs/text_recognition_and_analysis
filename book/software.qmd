@@ -1,0 +1,105 @@
+---
+title: "Software (platforms)"
+format: html
+---
+
+Within the context of text recognition and analysis there are number of commercial and open-source options available. Below I'll list the most common frameworks and some of their advantages and disadvantages. An in-depth discussion on how best to chose a framework within the context of your project is given in the next chapter (REFERENCE).
+
+## Commercial
+
+### [Transkribus](https://www.transkribus.org/)
+
+A dominant player in the transcription of historical texts is the Transkribus platform. This platform provides a way to apply layout detection, text transcription and custom model training (with on platform generated ground truth data) without coding. It offers commercial support options and a growing community of users, including their shared model zoo. The platform is currently built around the [PyLaia (python) library](LINK) (also below).
+
+| Pro:      | Con:      |
+| ------------- | ------------- |
+| user friendly | expensive
+| support / documentation | vendor lock-in
+| allows custom model training |
+
+### Google / Amazon / Microsoft APIs
+
+All three big tech platforms offer OCR based application programming interfaces (APIs) which you can access from (python) scripts. 
+
+In particular, HTR/OCR is covered by:
+
+- [Microsoft Azure Document Inteligence](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/)
+- [Google Vision AI](https://cloud.google.com/vision)
+- [Amazon Textract](https://aws.amazon.com/textract/)
+
+| Pro:      | Con:      |
+| ------------- | ------------- |
+| support / documentation | vendor lock-in
+| scalability | requires programming
+| relatively cheap | custom model training is often complex or not possible|
+
+> Multi-modal Large Language Models
+>
+> Increasingly there is a consolidation of these toolboxes into multi-modal Large Language Models (LLMs). These LLMs will provide impressive results on common tasks, but will not perform well on less common or more complex data.
+
+## Open source
+
+### [eScriptorium](https://escriptorium.inria.fr/)
+
+eScriptorium is a software platform created to make text layout analysis and recognition easy. The underlying text recognition is based on the [Kraken framework](https://kraken.re), for which it serves as an interface. The interface allows for the user to annotate and train custom models, with no coding required, similar to Transkribus. Despite providing much the same features as Transkribus, eScriptorium is not program as such, but a service to be run on a server or in a docker image. This does require knowledge on how to setup and manage docker instances, or do a full server install.
+
+| Pro:      | Con:      |
+| ------------- | ------------- |
+| user friendly | complex installation for novices
+| OK documentation |
+| full workflow control |
+| interoperability |
+| shared models |
+
+#### Installation & Use
+
+A basic docker install is provided on [the project code pages](https://gitlab.com/scripta/escriptorium/-/wikis/docker-install).
+
+https://github.com/HTR-United/CREMMA-Medieval-LAT
+https://help.transkribus.org/data-preparation
+https://escriptorium.readthedocs.io/en/latest/quick-start/
+https://ub-mannheim.github.io/eScriptorium_Dokumentation/Training-with-eScriptorium-EN.html
+
+https://github.com/HTR-United/htr-united
+https://github.com/OCR4all
+
+### [OCR4all](https://www.ocr4all.org/)
+
+OCR4all is an OCR platform built around the Calamari text recognition engine and the LAREX layout analysis tool. Similar to eScriptorium and Transkribus it aims at making the transcription of documents easy, without the need for coding. Similar to eScriptorium the setup is not program as such, but a service to be run on a server or in a docker image.
+
+| Pro:      | Con:      |
+| ------------- | ------------- |
+| user friendly | complex installation for novices
+| OK documentation |
+| full workflow control |
+| interoperability |
+| shared models |
+
+#### Installation & Use
+
+Quick docker install:
+
+```bash
+sudo docker run -p 1476:8080 \
+    -u `id -u root`:`id -g $USER` \
+    --name ocr4all \
+    -v $PWD/data:/var/ocr4all/data \
+    -v $PWD/models:/var/ocr4all/models/custom \
+    -it uniwuezpd/ocr4all
+```
+
+
+### [Tesseract](https://tesseract-ocr.github.io/tessdoc/)
+
+Tesseract is a popular open-source OCR program and out of the box does not allow for handwritten text recognition. However, the software does allow for the retraining of models. Having been a mainstay in OCR work in the open source community [a zoo of third party software](https://tesseract-ocr.github.io/tessdoc/User-Projects-%E2%80%93-3rdParty.html) providing interfaces and additional functionality exists, as well as a [python interface (pytesseract)](https://github.com/madmaze/pytesseract).
+
+### Custom pipelines and libraries
+
+Most of the above mentioned software options are mature and require limited coding knowledge to operate. However, I would be amiss to not mention the underlying HTR/OCR libraries. Depending on the use case one could benefit from using low level libraries, rather than more user friendly platforms (built around them). Most prominent python libraries for HTR/OCR work are [Kraken](https://kraken.re/main/index.html) as used by eScriptorium, [PyLaia](https://gitlab.teklia.com/atr/pylaia) used by Transkribus, [EasyOCR](https://github.com/JaidedAI/EasyOCR) and [PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR/blob/main/README_en.md).
+
+All these libraries provide machine learning setups to train handwritten text recognition models of the CNN + LSTM/RNN + CTC kind. In addition, Kraken and PaddleOCR provide document layout analysis (segmentation) options.
+
+| Pro:      | Con:      |
+| ------------- | ------------- |
+| flexible | complex installation
+| full workflow control | coding required

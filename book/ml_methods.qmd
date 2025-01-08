@@ -1,13 +1,13 @@
 ---
-title: "ML and computer vision"
+title: "Basics of machine learning and computer vision"
 format: html
 ---
 
-To understand the software (frameworks) for HTR/OCR solutions a brief introduction in ML and computer vision methods is required. This allows you to understand potential pitfalls better. As highlighted in Figure 2.1, there are two main ML components to HTR/OCR transcription workflows, a segmentation component and a text transcription component.
+As highlighted in Figure 2.1, there are two main ML components to HTR/OCR transcription workflows, a segmentation component and a text transcription component. To understand the software (frameworks) for HTR/OCR solutions a brief introduction in ML and computer vision methods is required. This allows you to understand potential pitfalls better.
 
 ## Computer vision
 
-Although computer vision methods, broadly, include ML methods the classical approaches differ significantly from ML methods and merit a small mention. Classic computer vision methods do not rely the machine learning methods as discussed below LINK, but rather on pixel (region) or image based transformation. These methods are often used in the pre-processing of images before a machine learning algorithm is applied. Classical examples are the removal of [uneven lighting across an image using adaptive histogram equalization](https://en.wikipedia.org/wiki/Adaptive_histogram_equalization), the detection of structuring elements such as [linear features using a Hough transform](https://en.wikipedia.org/wiki/Hough_transform), or the [adaptive thresholding of an image](https://en.wikipedia.org/wiki/Thresholding_(image_processing)) from colour to black-and-white only. These algorithms also serve an important role in the creation of additional data from a single reference dataset, through data augmentation LINK.
+Although computer vision methods, broadly, include ML methods the classical approaches differ significantly from ML methods. Classic computer vision methods, as discussed below LINK, are applied on pixel (region) or image based transformation. These methods are often used in the pre-processing of images before a machine learning algorithm is applied (FIGURE LINK). Classical examples are the removal of [uneven lighting across an image using adaptive histogram equalization](https://en.wikipedia.org/wiki/Adaptive_histogram_equalization), the detection of structuring elements such as [linear features using a Hough transform](https://en.wikipedia.org/wiki/Hough_transform), or the [adaptive thresholding of an image](https://en.wikipedia.org/wiki/Thresholding_(image_processing)) from colour to black-and-white only. These algorithms also serve an important role in the creation of additional data from a single reference dataset, through data augmentation LINK.
 
 ```{r}
 #| label: fig-cv
@@ -20,24 +20,28 @@ knitr::include_graphics("https://docs.opencv.org/3.4/ada_threshold.jpg")
 
 ## Machine Learning
 
-### Principles
+The machine learning components of the text segmentation and transcriptions rely on common machine learning algorithms and logic. To better understand these tasks, and how training methods influences the success of these models, I'll summarize some of these common building blocks. These are vulgarized and simplified descriptions to increase the broad understanding of these processes, for in depth discussions I refer to the linked articles in the text and machine learning textbooks at the end of this course.
 
-The machine learning components of the segmentation and transcriptions ML models rely on common ML algorithms and logic. To better understand these tasks, and how training methods influences the success of these models, I'll summarize some of these common building blocks. These are vulgarized and simplified descriptions to increase the broad understanding of these processes, for in depth discussions I refer to the linked articles in the text.
+```{r}
+#| label: fig-training
+#| fig-cap: "Machine Learning as summarized by XKCD (https://xkcd.com/1838/)"
+#| fig-align: "center"
+#| out-width: "50%"
+#| echo: FALSE
+knitr::include_graphics("https://imgs.xkcd.com/comics/machine_learning.png")
+```
 
-::: callout-note
-Those familiar with machine learning methods can skip this section.
-:::
+Machine learning models are non-deterministic and rely on learning or training (an optimization method) on ground truth (reference) data. The most simple machine learning algorithm is a simple linear regression. In a  simple linear regression one optimizes (trains) a slope and intercept parameter to fit the observed response (ground truth) to explanatory variables (data). The more complex the task, the more parameters and data are required. Although oversimplified, the very tongue in cheek cartoon by XKCD is a good mental model of what happens on an abstract level where we shuffle model parameters until we get good correspondence between the data input and the ground truth observations.
 
-#### Model training
+From this one can deduce a number of key take-home message:
 
-Machine learning models are 
+- a sufficient amount of training data
+- an appropriate ML and shuffling (optimization) algorithm
+- a ML model is limited by the representations within the training data
 
-#### Data augmentation
+### Detecting patterns: convolutional neural networks (CNN)
 
-
-#### Detecting patterns: convolutional neural networks (CNN)
-
-The analysis of images within the context of machine learning often (but not exclusively) happens using a convolutional neural networks (CNNs). Conceptually a CNN can be see as taking sequential sections of the image and summarizing them (i.e. convolve them) using a function (a filter), to a lower aggregated resolution (FIGURE XYZ). This reduces the size of the image, while at the same time while extracting a certain characteristic using a filter function. One of the most simple functions would be taking the average value across a 3x3 window.
+The analysis of images within the context of machine learning often (but not exclusively) happens using a convolutional neural networks (CNNs). Conceptually a CNN can be see as taking sequential sections of the image and summarizing them (i.e. convolve them) using a function (a filter), to a lower aggregated resolution (FIGURE XYZ). This reduces the size of the image, while at the same time while summarizing a certain characteristic using a filter function. One of the most simple functions would be taking the average value across a 3x3 window.
 
 ```{r}
 #| label: fig-convolution
@@ -50,13 +54,13 @@ knitr::include_graphics("./images/Conv_no_padding_no_strides.gif")
 
 It is important to understand this concept within the context of text recognition and classification tasks in general. It highlights the fact that ML algorithms do not "understand" (handwritten) text. Where people can make sense of handwritten text by understanding the flow, in addition to recognizing patterns, ML approaches focus on patterns, shapes or forms. However, some form of memory can be included using other methods.
 
-#### Memory: recurrent neural networks
+### Memory and context: recurrent neural networks
 
-A second component to many recognition tasks is form of memory [RNN](https://en.wikipedia.org/wiki/Recurrent_neural_network) and [LSTM](https://en.wikipedia.org/wiki/Long_short-term_memory).
+A second component to many recognition tasks is a form of memory. Where the CNN encodes for patterns it does so without explicitly taking into account the relative position of these patterns and their relationship to adjacent ones. Here, Recurrent Neural Networks ([RNN](https://en.wikipedia.org/wiki/Recurrent_neural_network)) and Long Short-Term Memory ([LSTM](https://en.wikipedia.org/wiki/Long_short-term_memory)) networks provide a solution. These algorithms allow for some of the information of adjacent data (either in time or space) to be retained to provide context on the current (time or space) position. Both these approaches can be uni- or bi-directional. In the former, the direction of processing matters in the latter it doesn't.
 
-#### Negative space: connectionist temporal classification
+### Negative space: connectionist temporal classification
 
-In speech and written text much of the structure is defined not only by what is there, the spoken and written words, but also what is not there, the pauses and spacing. Taken to the extreme the expressionist / dadaist poem "Boem paukeslag" by [Paul van Ostaijen](https://en.wikipedia.org/wiki/Paul_van_Ostaijen) is an example of irregularity in text in typeset text. These irregularities or negative space in the pace of writing is another hurdle for text recognition algorithms.
+In speech and written text much of the structure is defined not only by what is there, the spoken and written words, but also what is not there, the pauses and spacing. Taken to the extreme the expressionist / dadaist poem "Boem paukeslag" by [Paul van Ostaijen](https://en.wikipedia.org/wiki/Paul_van_Ostaijen) is an example of irregularity in typeset text. These irregularities or negative space in the pace of writing is another hurdle for text recognition algorithms. Generally, we want a readable text as output of our ML models not dadaist impressions with large gaps.
 
 ```{r}
 #| label: fig-boem-paukenslag
@@ -67,7 +71,7 @@ In speech and written text much of the structure is defined not only by what is 
 knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/0/0c/Boempaukeslag.jpg")
 ```
 
-These issues in detecting uneven spacing are addressed using the [connectionist temporal classification (CTC)](https://en.wikipedia.org/wiki/Connectionist_temporal_classification). This function is applied to the RNN and LSTM output, where it [collapses a sequence of recurring labels](https://distill.pub/2017/ctc/) through oversampling to its most likely reduced form while respecting spacing and coherence.
+These issues in detecting uneven spacing are addressed using the [Connectionist Temporal Classification (CTC)](https://en.wikipedia.org/wiki/Connectionist_temporal_classification). This function is applied to the RNN and LSTM output, where it [collapses a sequence of recurring labels](https://distill.pub/2017/ctc/) through oversampling to its most likely reduced form.
 
 ```{r}
 #| label: fig-ctc-loss
@@ -78,19 +82,23 @@ These issues in detecting uneven spacing are addressed using the [connectionist 
 knitr::include_graphics("images/ctc_loss_Hannun.png")
 ```
 
-#### Transformers
+### Data augmentation
 
+Sufficient data is key in training a ML model which performs well. However, at times you might be limited in the data you can access for training. A common issue is that limited ground truth data (labels, text transcriptions) are available. Data augmentation is a way to slightly alter a smaller existing dataset in order to create a larger, partially, artificial dataset. Within the context of HTR/OCR one can generate slight variations of the same text image and label pair through computer vision (or machine learning) based alterations, such as rotating skewing and introducing noise to the image.
 
+```{r}
+#| label: fig-data-augmentation
+#| fig-cap: "Data augmentation examples on the French word Juillet"
+#| fig-align: "center"
+#| out-width: "100%"
+#| echo: FALSE
+knitr::include_graphics("./images/image_augmentation.png")
+```
 
-### Implementation
+## Implementation
 
+Putting all the pieces together the most common ML implementation of text segmentation rely heavily on CNN based segmentation networks, while text recognition often if not always takes the form of a CNN + (bidirectional) LSTM/RNN + CTC network. When reading technical documentation on the architecture of models in text transcription frameworks you might come across these terms. Depending on the implementation or framework used data augmentation during training might be provided to increase the scope of the model and increase the chances of Out-Of-Distribution (OOD) generalization.
 
+### Out-of-distribution generalization in text transcription
 
-#### Segmentation
-
-- CNN
-
-#### Text Recognition
-
-- CNN + biLSTM + CTC
-- CNN + RNN + CTC
+Handwritten text or old print is highly varying in shape form and retained quality. This pushes trained models towards poor performance as the chances of good OOD generalization are small. In short, two text styles are rarely the same or not similar enough for a trained model to be transferred to a new, seemingly similar, transcription task.

@@ -1,0 +1,31 @@
+---
+title: "Image acquisition"
+format: html
+---
+
+Although this course focuses on text recognition and analysis it is important to note that image acquisition, the quality of the images and the consistent collection of meta-data is key to all subsequent processing. If you start a project where the digitization is not yet completed you should consider the importance of the digitization step within the context of all subsequent post-processing and text recognition workflows.
+
+The quality of the collected image data and the availability of meta-data has a profound impact on your workflow. Preemptively addressing image quality and meta-data issues can save significant time and effort, even when taking up some more time in planning and data collection.
+
+Some general guidelines for digitization therefore include:
+
+- ensuring a proper digitization setup
+  - high quality optics (high f-stop value for sharpness)
+  - uniform shadowless illumination using multiple lights and ring lights
+  - avoid harsh flash based setups (protecting sensitive manuscripts)
+- ensuring a fixed digitization protocol
+  - fixed sequence of tasks involved
+  - well documented
+  - collect meta-data when feasible
+- ensuring dynamic back-ups to prevent data loss
+
+Finally, if not within your domain expertise reach out to your local collection managers for support and input on all these aspects.
+
+```{r}
+#| label: fig-digitzation
+#| fig-cap: "The COBECORE digitization station, including a reproduction stand, cold lights, a DSLR camera and a black matte background"
+#| fig-align: "center"
+#| out-width: "50%"
+#| echo: FALSE
+knitr::include_graphics("./images/digistation.jpg")
+```

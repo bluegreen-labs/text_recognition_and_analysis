@@ -7,14 +7,16 @@ project:
     - _headers
 
 book:
-  title: "Text recognition and analysis"
+  title: "Text digitization, recognition and analysis"
   author: "Koen Hufkens"
   date: "2025/01/07"
   page-navigation: true
   chapters:
     - index.qmd
     - intro.qmd
+    - digitization.qmd
     - ml_methods.qmd
+    - software.qmd
     - open_source.qmd
     - references.qmd
   favicon: "figures/favicon.ico"
