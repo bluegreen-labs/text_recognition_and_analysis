@@ -20,7 +20,7 @@ knitr::include_graphics("https://docs.opencv.org/3.4/ada_threshold.jpg")
 
 ## Machine Learning
 
-The machine learning components of the text segmentation and transcriptions rely on common machine learning algorithms and logic. To better understand these tasks, and how training methods influences the success of these models, I'll summarize some of these common building blocks. These are vulgarized and simplified descriptions to increase the broad understanding of these processes, for in depth discussions I refer to the linked articles in the text and machine learning textbooks at the end of this course.
+The machine learning components of the text segmentation and transcriptions rely on common machine learning algorithms and logic. To better understand these tasks, and how training methods influences the success of these models, I will summarize some of these common building blocks. These are vulgarized and simplified descriptions to increase the broad understanding of these processes, for in depth discussions I refer to the linked articles in the text and machine learning textbooks at the end of this course.
 
 ```{r}
 #| label: fig-training

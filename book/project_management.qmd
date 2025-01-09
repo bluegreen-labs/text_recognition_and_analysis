@@ -1,0 +1,45 @@
+---
+title: "Transcription strategies"
+format: html
+---
+
+I have shown that there is a wide selection of HTR/OCR software to chose from, largely divided between commercial supported and scalable solutions and their open-source alternatives. However, it is important to consider all potential factors in a cost-benefit analysis before settling on a final strategy for data transcription. Below I break down factors influencing cost, and provide a number of strategies for a range of projects (taking into account the cost-benefit factor).
+
+## Cost
+
+Generally two factors should be considered, full cost at scale and interoperability.
+
+### Scale
+
+Many transcription projects suffer from the law of large numbers, or in this case death by a thousand paper cuts. In short, data processing at a small cost will blow up to a significant sum given enough data. To illustrate how cost at scale can blow up quickly I will use my own [COBECORE project](https://cobecore.org) output as an example. In this project ~75K tables (pages) of climate data were digitized and partially transcribed through citizen science.
+
+When considering for example the Transcribus project as a potential option for transcription I calculated that
+the extraction of tables (1 credit), and its fields (1 credit), and text detection and transcription (1 credit) will require 3 credits per page. For the ~75K tables in the archive this would represent 225K Transkribus credits, with a data volume > 200GB a Team plan is required which would generate a cost of 60 000 EURO. This is under the assumption that no re-runs are required (i.e. a perfect result on a first pass). Experience teaches that ML is often iterative, and the true costs will probably be far higher (easily double the simplest estimate). Various vision APIs of Google or Amazon are cheaper, but don’t allow for easy training and requires coding, in which case you will have to add a (cloud) data engineer/scientist. This shows that when tasks become large, with more complex workflows, alternatives might be cost effective, especially if you are paying a software developer anyway. 
+
+### Interoperability
+
+Interoperability, or the freedom to use your annotations and models as you like, is an important factor to consider as it influences cost at scale but also the potential to collaborate easily. Most open-source platforms, due to the nature of these projects, share their whole workflow without restrictions. This makes that you can easily share your annotation data for re-use in a colleagues project. Or have your trained model run on a new text of a friend. The same can be said for say Transkribus or the Google Vision API. However, you would force your friend to use a paying service to access your shared data. This lock-in situation often comes at a cost, which does not scale in favour of users and their own contributions. Before settling on a particular software (service) take into account how easy is it to escape the faustian bargain of certain platforms (or APIs) and their vendor lock-in. To quote The Eagle's Hotel California: "You can check out any time you like, But you can never leave".
+
+## Project strategies
+
+With the above cost factors in mind I will sketch what I would see as the optimal strategies in a number of situations. However, some mediating factors might come into play. For example, sponsored deals via universities for various commercial platform (API) solutions are not taken into account. These strategies assume financial independence of the lab/team involved. I also assume that nobody on the team is sufficiently versed in programming from the start, i.e. balancing user-friendliness with cost. 
+
+::::callout-note
+The size of the project (small/large) refers to the size of the data to be processed, not the available funding! I also assume that no digitization is needed, which is expensive slow manual labour.
+::::
+
+### Small project, small team
+
+Generally, for small projects on a small team I would suggest using Transkribus. Outside learning to use the platform the barrier of entry is low and the cost manageable. This approach would be ideal for a limited corpus of texts within the context of a (Phd/Masters) thesis. Do take into account potential future growth and the limits on interoperability! If a Phd spins off into a larger proposal to process more data costs can grow substantially.
+
+### Small project, large team
+
+When a team grows so does the likelihood of having someone with tech skills on board. This opens the possibility to consider open-source alternatives, which do require some initial tooling for setup but will perform really well once this part is done. In this use case, I would suggest eScriptorium or OCR4all, in that order.
+
+### Large project, large team
+
+When a project grows so does the potential for collaborations. As such interoperability becomes an even bigger argument to pick an open-source approach. Similarly, as for smaller projects, I would suggest eScriptorium or OCR4all. Depending on the complexity of the project, which might go up with scale as well, you might benefit from a custom approach built around one of the low level libraries (Kraken, PyLaia, PaddleOCR).
+
+### Large project, small team
+
+You bit of more than you can chew if no matching funding is available. Unless there is a large amount of funding, and a small team can acquire the technological expertise. This is not a favourable position to be in. You will be unlikely to deliver on the promises made in proposals with this dynamic. In this use case the only option left is to either retool quickly and gain (or borrow) the expertise to run an open-source option, such as eScriptorium, or pay for as far as you can get using Transkribus. If, but only if, you have the expertise to run a lean open-source based software solution you could move quickly on large volumes of data cheaply. It goes without saying that it would benefit to build this capacity.

@@ -17,7 +17,7 @@ book:
     - digitization.qmd
     - ml_methods.qmd
     - software.qmd
-    - open_source.qmd
+    - project_management.qmd
     - references.qmd
   favicon: "figures/favicon.ico"
   twitter-card: true
