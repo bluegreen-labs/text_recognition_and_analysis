@@ -1,7 +1,7 @@
 # Text Recognition & Analysis
 
-Understanding or translating large volumes of handwritten historical text is critical for historical analysis preservation of text, dissemination of knowledge and valorization of archived measurements and/or other scientific observations. However, reading and processing these large volumes of historical texts (at scale) is often difficult and time consuming. The automation of this process would therefore help in many historical analysis, data recovery and other digital preservation efforts.
+These are the materials for the course "Text recognition and analysis" given 6-7 Feb. 2025 at the Leibniz-Institut für Europäische Geschichte (IEG), Mainz. This book will serve as a reference during the course, and as a general introduction and reference for all things Handwritten Text Recognition / Optical Character Recognition (HTR/OCR).
 
-Handwritten text recognition (HTR), contrary to optical character recognition (OCR) for typed texts, is a relatively complex process. Handwritten text (or old fonts) are surprisingly varied, with characters varying from one person (or book) to the next. These variations make HTR/OCR at times an intractable problem.
+This reference gives an overview of the most common tools for historical (handwritten) text recognition. In addition, I will also briefly discuss the initial digitization and potential citizen science components of such projects, leveraging my experience leading the [Congo basin eco-climatological data recovery and valorisation project](https://cobecore.org/). It will discuss the practical issues of such projects and how to resolve them efficiently and cost-effectively. This course is a practical tool, not a theoretical machine learning reference. This course will give you an idea of what it takes to start a data recovery effort.
 
 ![](https://raw.githubusercontent.com/bluegreen-labs/text_recognition_and_analysis/refs/heads/main/book/images/HTR_workflow.drawio.svg)
