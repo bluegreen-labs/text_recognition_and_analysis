@@ -1,5 +1,5 @@
 ---
-title: "Basics of machine learning and computer vision"
+title: "Computer vision and machine learning"
 format: html
 ---
 

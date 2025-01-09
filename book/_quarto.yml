@@ -18,6 +18,7 @@ book:
     - ml_methods.qmd
     - software.qmd
     - project_management.qmd
+    - tips_tricks.qmd
     - references.qmd
   favicon: "figures/favicon.ico"
   twitter-card: true
