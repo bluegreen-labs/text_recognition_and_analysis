@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Basic R – Text recognition and analysis</title>
+<title>6&nbsp; Tips and tricks – Text digitization, recognition and analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,20 +30,20 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./ggplot.html" rel="next">
-<link href="./intro.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./project_management.html" rel="prev">
 <link href="./figures/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-7e4af58bafdf0ee8a2668619ecca0679.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-6284fece335cc2e32bd4191e650e0cb2.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -73,9 +73,10 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta name="twitter:title" content="2&nbsp; Basic R – Text recognition and analysis">
+<meta name="twitter:title" content="6&nbsp; Tips and tricks – Text digitization, recognition and analysis">
 <meta name="twitter:description" content="">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="./images/image_augmentation.png">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-sidebar floating nav-fixed">
@@ -89,7 +90,7 @@ ul.task-list li input[type="checkbox"] {
     <img src="https://bluegreenlabs.org/img/logo_text_small.png" alt="" class="navbar-logo">
     </a>
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Text recognition and analysis</span>
+    <span class="navbar-title">Text digitization, recognition and analysis</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -132,7 +133,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./basicr.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic R</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tips_tricks.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tips and tricks</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -158,14 +159,32 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./basicr.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic R</span></span></a>
+  <a href="./digitization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Digitization</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ggplot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">ggplot demo</span></span></a>
+  <a href="./ml_methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Computer vision and machine learning</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./software.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">HTR/OCR software and data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./project_management.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Project management</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tips_tricks.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tips and tricks</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -184,7 +203,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#basic-expressions" id="toc-basic-expressions" class="nav-link active" data-scroll-target="#basic-expressions"><span class="header-section-number">2.0.1</span> Basic expressions</a></li>
+  <li><a href="#capacity-building" id="toc-capacity-building" class="nav-link active" data-scroll-target="#capacity-building"><span class="header-section-number">6.1</span> Capacity building</a></li>
+  <li><a href="#text-annotation" id="toc-text-annotation" class="nav-link" data-scroll-target="#text-annotation"><span class="header-section-number">6.2</span> Text annotation</a>
+  <ul class="collapse">
+  <li><a href="#citizen-science" id="toc-citizen-science" class="nav-link" data-scroll-target="#citizen-science"><span class="header-section-number">6.2.1</span> Citizen science</a></li>
+  </ul></li>
+  <li><a href="#data-augmentation" id="toc-data-augmentation" class="nav-link" data-scroll-target="#data-augmentation"><span class="header-section-number">6.3</span> Data augmentation</a>
+  <ul class="collapse">
+  <li><a href="#synthetic-data" id="toc-synthetic-data" class="nav-link" data-scroll-target="#synthetic-data"><span class="header-section-number">6.3.1</span> Synthetic data</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -193,7 +220,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Basic R</span></h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tips and tricks</span></h1>
 </div>
 
 
@@ -210,57 +237,43 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="basic-expressions" class="level3" data-number="2.0.1">
-<h3 data-number="2.0.1" class="anchored" data-anchor-id="basic-expressions"><span class="header-section-number">2.0.1</span> Basic expressions</h3>
-<p>An expression is a set of commands that returns a value.</p>
-<p>Click <code>Run Code</code> to run the following R code.</p>
-<p>Execute this simple calculation.</p>
-<pre class="{webr-r}"><code>50 * 2.2</code></pre>
-<p>Show the first rows of a table.</p>
-<pre class="{webr-r}"><code>head(mtcars)</code></pre>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<section id="capacity-building" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="capacity-building"><span class="header-section-number">6.1</span> Capacity building</h2>
+<p>As highlighted in the project management section the scale of your project and the capacity of your team define the optimal approach. However, across the four scenarios provided a common notion is important, <strong>capacity building</strong>.</p>
+<p>Within an academic context contracts are often limited in time. In addition, people move frequently between positions search for more stable (research) positions. This presents the danger of knowledge leakage. Preventing this slow trickle of disappearing knowledge requires redundancy in your project management approach, where the responsibility of key transcription components are not the sole responsibility of one person. Generally, this advice does not only apply to transcription projects, but most academic endeavours.</p>
+<p>When teaching people transcription workflows, or the setup of a particular piece of software, do so in pairs. In addition, extensively document the process. Although courses and documentation exists for all software discussed these are generalized workflows and do not account for idiosyncrasies within your dataset.</p>
+</section>
+<section id="text-annotation" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="text-annotation"><span class="header-section-number">6.2</span> Text annotation</h2>
+<p>Text annotation is a time consuming and often difficult process. It often combines the need for domain knowledge with a very tedious task, as the goal is not to understand the text but to gather data. Dividing this task among trusted authorities such as student contributions might speed up this process. Once, as mentioned above, having a good manual at hand and the capacity within a research team to quickly teach this to someone new is key to the success of such an approach. Regardless, do not underestimate the time you need to invest in this process, so make it worth your while an pick your battles carefully.</p>
+<section id="citizen-science" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="citizen-science"><span class="header-section-number">6.2.1</span> Citizen science</h3>
+<p>Alternative options to create training data include the use of citizen science platforms, such as Zooniverse (LINK). This is a valid strategy, which also includes an outreach component. However, citizen science is not a way to get “free data”. When done properly there is a good rapport between the community which one engages with and their efforts. Most citizen science efforts will require half an hour of someone’s time to keep going, provide feedback and intermittent results to keep the community motivated. Furthermore, one should use citizen science because it is an easy way to get (training) data while not all other options such as data augmentation on smaller datasets have been exhausted. The latter approaches are often required regardless of data size. Assessing the accuracy of suite of models is required before concluding that more training data is needed, than can reasonably be generated within a team.</p>
+</section>
+</section>
+<section id="data-augmentation" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="data-augmentation"><span class="header-section-number">6.3</span> Data augmentation</h2>
+<p>Do not underestimate the power of image augmentation to make your HTR/OCR algorithm more robust. Where you have control over this process it is advisable to use it. In this context, it is also generally a poor idea to apply extensive computer vision based pre-processing to the text, outside proper cropping or aligning of the pages. Especially, binarization of images (converting from RGB to black and white only) can produce unstable HTR output, as the pre-processing step has an outside influence as it is linked to data loss. Conversely, image augmentation by introducing noise can make results more robust to these disturbances, real or not.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-data-augmentation" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-data-augmentation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/image_augmentation.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%">
 </div>
-<div class="callout-title-container flex-fill">
-Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Show the last rows of the <code>mtcars</code> table.</p>
-<pre class="{webr-r}"><code># Add you code here</code></pre>
-<p>Your result should look like the plot below</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Expected Result
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>                mpg cyl  disp  hp drat    wt qsec vs am gear carb
-Porsche 914-2  26.0   4 120.3  91 4.43 2.140 16.7  0  1    5    2
-Lotus Europa   30.4   4  95.1 113 3.77 1.513 16.9  1  1    5    2
-Ford Pantera L 15.8   8 351.0 264 4.22 3.170 14.5  0  1    5    4
-Ferrari Dino   19.7   6 145.0 175 3.62 2.770 15.5  0  1    5    6
-Maserati Bora  15.0   8 301.0 335 3.54 3.570 14.6  0  1    5    8
-Volvo 142E     21.4   4 121.0 109 4.11 2.780 18.6  1  1    4    2</code></pre>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data-augmentation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.1: Data augmentation examples on the French word Juillet, including a binarization bottom left.
+</figcaption>
+</figure>
 </div>
 </div>
 </div>
-</div>
-</div>
+<section id="synthetic-data" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="synthetic-data"><span class="header-section-number">6.3.1</span> Synthetic data</h3>
+<p>Taking image augmentation to the extreme is the creation of synthetic data. Here, you don not transform original data but create a fully artificial dataset. This approach often requires custom scripts, but might be a way to sidestep the annotation of texts.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -490,8 +503,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -602,7 +613,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -830,13 +840,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./intro.html" class="pagination-link" aria-label="Introduction">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
+      <a href="./project_management.html" class="pagination-link" aria-label="Project management">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Project management</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./ggplot.html" class="pagination-link" aria-label="ggplot demo">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">ggplot demo</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
