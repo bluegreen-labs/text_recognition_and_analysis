@@ -244,9 +244,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#open-source" id="toc-open-source" class="nav-link" data-scroll-target="#open-source"><span class="header-section-number">4.2</span> Open source</a>
   <ul class="collapse">
   <li><a href="#escriptorium" id="toc-escriptorium" class="nav-link" data-scroll-target="#escriptorium"><span class="header-section-number">4.2.1</span> eScriptorium</a></li>
-  <li><a href="#ocr4all" id="toc-ocr4all" class="nav-link" data-scroll-target="#ocr4all"><span class="header-section-number">4.2.2</span> OCR4all</a></li>
-  <li><a href="#tesseract" id="toc-tesseract" class="nav-link" data-scroll-target="#tesseract"><span class="header-section-number">4.2.3</span> Tesseract</a></li>
-  <li><a href="#custom-pipelines-and-libraries" id="toc-custom-pipelines-and-libraries" class="nav-link" data-scroll-target="#custom-pipelines-and-libraries"><span class="header-section-number">4.2.4</span> Custom pipelines and libraries</a></li>
+  <li><a href="#arkindex" id="toc-arkindex" class="nav-link" data-scroll-target="#arkindex"><span class="header-section-number">4.2.2</span> ArkIndex</a></li>
+  <li><a href="#ocr4all" id="toc-ocr4all" class="nav-link" data-scroll-target="#ocr4all"><span class="header-section-number">4.2.3</span> OCR4all</a></li>
+  <li><a href="#tesseract" id="toc-tesseract" class="nav-link" data-scroll-target="#tesseract"><span class="header-section-number">4.2.4</span> Tesseract</a></li>
+  <li><a href="#custom-pipelines-and-libraries" id="toc-custom-pipelines-and-libraries" class="nav-link" data-scroll-target="#custom-pipelines-and-libraries"><span class="header-section-number">4.2.5</span> Custom pipelines and libraries</a></li>
   </ul></li>
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">4.3</span> Data</a></li>
   </ul>
@@ -385,8 +386,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>A basic docker install is provided on <a href="https://gitlab.com/scripta/escriptorium/-/wikis/docker-install">the project code pages</a>.</p>
 </section>
 </section>
-<section id="ocr4all" class="level3" data-number="4.2.2">
-<h3 data-number="4.2.2" class="anchored" data-anchor-id="ocr4all"><span class="header-section-number">4.2.2</span> <a href="https://www.ocr4all.org/">OCR4all</a></h3>
+<section id="arkindex" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="arkindex"><span class="header-section-number">4.2.2</span> <a href="https://demo.arkindex.org/">ArkIndex</a></h3>
+<p>ArkIndex is a document processing platform similar to Transkribus. More so, the this open-source platform is made by the company, Teklia, behind the PyLaia library underpinning most of Transkribus. In therefore offers the same functionality with a different interface.</p>
+<section id="installation-use-1" class="level4" data-number="4.2.2.1">
+<h4 data-number="4.2.2.1" class="anchored" data-anchor-id="installation-use-1"><span class="header-section-number">4.2.2.1</span> Installation &amp; Use</h4>
+<p>A basic docker install is provided on <a href="https://doc.arkindex.org/deployment/setup/">the project documentation pages</a>.</p>
+</section>
+</section>
+<section id="ocr4all" class="level3" data-number="4.2.3">
+<h3 data-number="4.2.3" class="anchored" data-anchor-id="ocr4all"><span class="header-section-number">4.2.3</span> <a href="https://www.ocr4all.org/">OCR4all</a></h3>
 <p>OCR4all is an OCR platform built around the Calamari text recognition engine and the LAREX layout analysis tool. Similar to eScriptorium and Transkribus it aims at making the transcription of documents easy, without the need for coding. Similar to eScriptorium the setup is not program as such, but a service to be run on a server or in a docker image.</p>
 <table class="caption-top table">
 <thead>
@@ -418,8 +427,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-<section id="installation-use-1" class="level4" data-number="4.2.2.1">
-<h4 data-number="4.2.2.1" class="anchored" data-anchor-id="installation-use-1"><span class="header-section-number">4.2.2.1</span> Installation &amp; Use</h4>
+<section id="installation-use-2" class="level4" data-number="4.2.3.1">
+<h4 data-number="4.2.3.1" class="anchored" data-anchor-id="installation-use-2"><span class="header-section-number">4.2.3.1</span> Installation &amp; Use</h4>
 <p>The software runs as a docker service and can be installed using the following command:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> docker run <span class="at">-p</span> 1476:8080 <span class="dt">\</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">-u</span> <span class="kw">`</span><span class="fu">id</span> <span class="at">-u</span> root<span class="kw">`</span>:<span class="kw">`</span><span class="fu">id</span> <span class="at">-g</span> <span class="va">$USER</span><span class="kw">`</span> <span class="dt">\</span></span>
@@ -429,14 +438,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">-it</span> uniwuezpd/ocr4all</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
-<section id="tesseract" class="level3" data-number="4.2.3">
-<h3 data-number="4.2.3" class="anchored" data-anchor-id="tesseract"><span class="header-section-number">4.2.3</span> <a href="https://tesseract-ocr.github.io/tessdoc/">Tesseract</a></h3>
+<section id="tesseract" class="level3" data-number="4.2.4">
+<h3 data-number="4.2.4" class="anchored" data-anchor-id="tesseract"><span class="header-section-number">4.2.4</span> <a href="https://tesseract-ocr.github.io/tessdoc/">Tesseract</a></h3>
 <p>Tesseract is a popular open-source OCR program, originally created by Google but now maintained by the open-source community. Out of the box Tesseract does not allow for handwritten text recognition as the included models are not trained on handwritten data.</p>
 <p>However, the software does allow for the retraining of models. Having been a mainstay in OCR work in the open source community <a href="https://tesseract-ocr.github.io/tessdoc/User-Projects-%E2%80%93-3rdParty.html">a zoo of third party software</a> providing interfaces and additional functionality exists, as well as a <a href="https://github.com/madmaze/pytesseract">python interface (pytesseract)</a> to make data processing easier.</p>
 </section>
-<section id="custom-pipelines-and-libraries" class="level3" data-number="4.2.4">
-<h3 data-number="4.2.4" class="anchored" data-anchor-id="custom-pipelines-and-libraries"><span class="header-section-number">4.2.4</span> Custom pipelines and libraries</h3>
-<p>Most of the above mentioned software options are mature and require limited coding knowledge to operate. However, I would be amiss to not mention the underlying HTR/OCR programming libraries. Depending on the use case one could benefit from using low level libraries, rather than more user friendly platforms (built around them). Most prominent python libraries for HTR/OCR work are <a href="https://kraken.re/main/index.html">Kraken</a> as used by eScriptorium, <a href="https://gitlab.teklia.com/atr/pylaia">PyLaia</a> used by Transkribus, <a href="https://github.com/JaidedAI/EasyOCR">EasyOCR</a> and <a href="https://github.com/PaddlePaddle/PaddleOCR/blob/main/README_en.md">PaddleOCR</a>.</p>
+<section id="custom-pipelines-and-libraries" class="level3" data-number="4.2.5">
+<h3 data-number="4.2.5" class="anchored" data-anchor-id="custom-pipelines-and-libraries"><span class="header-section-number">4.2.5</span> Custom pipelines and libraries</h3>
+<p>Most of the above mentioned software options are mature and require limited coding knowledge to operate. However, I would be amiss to not mention the underlying HTR/OCR programming libraries. Depending on the use case one could benefit from using low level libraries, rather than more user friendly platforms (built around them). Most prominent python libraries for HTR/OCR work are <a href="https://kraken.re/main/index.html">Kraken</a> as used by eScriptorium, <a href="https://gitlab.teklia.com/atr/pylaia">PyLaia</a> used by Transkribus, <a href="https://github.com/JaidedAI/EasyOCR">EasyOCR</a> and <a href="https://github.com/PaddlePaddle/PaddleOCR/blob/main/README_en.md">PaddleOCR</a>. Other software libraries to mention are <a href="">YOLO</a> and <a href="https://pypi.org/project/doc-ufcn/">doc-UFCN</a> which both cover layout and text detection needs.</p>
 <p>All these libraries provide machine learning setups to train handwritten text recognition models of the CNN + LSTM/RNN + CTC kind. In addition, Kraken and PaddleOCR provide document layout analysis (segmentation) options.</p>
 <table class="caption-top table">
 <thead>
