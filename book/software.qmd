@@ -54,6 +54,14 @@ eScriptorium is a software platform created to make text layout analysis and rec
 
 A basic docker install is provided on [the project code pages](https://gitlab.com/scripta/escriptorium/-/wikis/docker-install).
 
+### [ArkIndex](https://demo.arkindex.org/)
+
+ArkIndex is a document processing platform similar to Transkribus. More so, the this open-source platform is made by the company, Teklia, behind the PyLaia library underpinning most of Transkribus. In therefore offers the same functionality with a different interface.
+
+#### Installation & Use
+
+A basic docker install is provided on [the project documentation pages](https://doc.arkindex.org/deployment/setup/).
+
 ### [OCR4all](https://www.ocr4all.org/)
 
 OCR4all is an OCR platform built around the Calamari text recognition engine and the LAREX layout analysis tool. Similar to eScriptorium and Transkribus it aims at making the transcription of documents easy, without the need for coding. Similar to eScriptorium the setup is not program as such, but a service to be run on a server or in a docker image.
@@ -87,7 +95,7 @@ However, the software does allow for the retraining of models. Having been a mai
 
 ### Custom pipelines and libraries
 
-Most of the above mentioned software options are mature and require limited coding knowledge to operate. However, I would be amiss to not mention the underlying HTR/OCR programming libraries. Depending on the use case one could benefit from using low level libraries, rather than more user friendly platforms (built around them). Most prominent python libraries for HTR/OCR work are [Kraken](https://kraken.re/main/index.html) as used by eScriptorium, [PyLaia](https://gitlab.teklia.com/atr/pylaia) used by Transkribus, [EasyOCR](https://github.com/JaidedAI/EasyOCR) and [PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR/blob/main/README_en.md).
+Most of the above mentioned software options are mature and require limited coding knowledge to operate. However, I would be amiss to not mention the underlying HTR/OCR programming libraries. Depending on the use case one could benefit from using low level libraries, rather than more user friendly platforms (built around them). Most prominent python libraries for HTR/OCR work are [Kraken](https://kraken.re/main/index.html) as used by eScriptorium, [PyLaia](https://gitlab.teklia.com/atr/pylaia) used by Transkribus, [EasyOCR](https://github.com/JaidedAI/EasyOCR) and [PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR/blob/main/README_en.md). Other software libraries to mention are [YOLO]() and [doc-UFCN](https://pypi.org/project/doc-ufcn/) which both cover layout and text detection needs.
 
 All these libraries provide machine learning setups to train handwritten text recognition models of the CNN + LSTM/RNN + CTC kind. In addition, Kraken and PaddleOCR provide document layout analysis (segmentation) options.
 
