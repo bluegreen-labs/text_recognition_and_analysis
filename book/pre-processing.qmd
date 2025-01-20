@@ -1,0 +1,24 @@
+# Pre-processing {#sec-pre-processing}
+
+There are two main ML components to HTR/OCR transcription workflows (@fig-workflow), a segmentation component and a text transcription component. To understand the software (frameworks) for HTR/OCR solutions a brief introduction in ML and computer vision pre-processing methods is required. This allows you to understand potential pitfalls better.
+
+## Computer vision
+
+Although [computer vision](https://en.wikipedia.org/wiki/Computer_vision) methods, broadly, include ML methods the classical approaches differ significantly from ML methods. Classic computer vision methods are applied on pixel (region) or image based transformation. These methods are often used in the pre-processing of images before a machine learning algorithm is applied @fig-workflow. In particular, the removal of noise, boosting of text contrast and creation of evenly lighted documents are common pre-processing steps.
+
+These algorithms also serve an important role in the creation of additional (synthetic) data from a single reference dataset, through data augmentation @fig-data-augmentation, in order to increase a machine learning model robustness.
+
+## Key pre-processing concepts
+
+Classical examples are the removal of [uneven lighting across an image using (contrast limited) adaptive histogram equalization (CLAHE)](https://en.wikipedia.org/wiki/Adaptive_histogram_equalization), the detection and removal of structuring elements such as [linear features using a Hough transform](https://en.wikipedia.org/wiki/Hough_transform), or the [adaptive thresholding of an image](https://en.wikipedia.org/wiki/Thresholding_(image_processing)) from colour to black-and-white only.
+
+```{r}
+#| label: fig-cv
+#| fig-cap: "Example of various thresholding methods as implemented in the OpenCV computer vision library (https://opencv.org)"
+#| fig-align: "center"
+#| out-width: "50%"
+#| echo: FALSE
+knitr::include_graphics("https://docs.opencv.org/3.4/ada_threshold.jpg")
+```
+
+Other common methods are the use of [Non-Local Means de-noising](https://docs.opencv.org/4.11.0/d5/d69/tutorial_py_non_local_means.html) to remove stochastic noise. Other [Fast Fourier Transform (FFT)](https://en.wikipedia.org/wiki/Fast_Fourier_transform) based methods can be applied to [remove periodic noise](https://docs.opencv.org/4.11.0/d2/d0b/tutorial_periodic_noise_removing_filter.html) by manipulating the frequency domain of the image.

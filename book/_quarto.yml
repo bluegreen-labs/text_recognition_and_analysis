@@ -15,7 +15,9 @@ book:
     - index.qmd
     - intro.qmd
     - digitization.qmd
-    - ml_methods.qmd
+    - pre-processing.qmd
+    - machine_learning.qmd
+    - data.qmd
     - software.qmd
     - project_management.qmd
     - tips_tricks.qmd

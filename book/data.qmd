@@ -1,0 +1,38 @@
+# Data (generation) {#sec-data}
+
+Methodologically (see @sec-machine-learning and @sec-software) the problem of text transcription seems to be solved, with various software solutions available. So, what is holding back (universal) open-source HTR/OCR? Generally, **data** is what holds back HTR in practice. 
+
+Given the many variations in handwritten text, machine learning algorithms need to be trained ("see") a wide variety of handwritten text characters to be able to translate similarly styled handwritten text, and potentially apply this to other adjacent styles. How close two documents are in writing style determines how well a trained model will perform on this task.
+
+To use the XKCD cartoon (@fig-training), your (input) data does not resemble the pile used to train the model. Handwritten text or old print is highly varying in shape form and retained quality. This pushes trained models towards poor performance as the chances of good Out-of-Distribution (OOD) generalization are small. In short, two text styles are rarely the same or not similar enough for a trained model to be transferred to a new, seemingly similar, transcription task. Consequently, the more variations in handwritten text styles you train a machine learning algorithm on the easier it will be to transcribe a wide variety of text styles. In short, the bottleneck in automated transcription is gathering sufficient training data (for your use case). 
+
+Although the ML code might be open-source many large training datasets are not always shared as generously. It can be argued that within the context of FAIR research practices machine learning code disseminated without the training data, or model parameters, for a particular study is decidedly not open science. A similar argument has been made within the context of the recent flurry of supposedly open-source Large Language Models (LLMs), such as ChatGPT.
+
+The lack of access to both the training data, or a pre-trained model, limits the re-use of the model in a new context. One cannot take a model and fine-tune it, i.e. let it "see" new text styles to learn from. In short, if you only have the underlying model code you always have to train a model from scratch (anew) using your own, often limited, dataset. This context is important to understand, as this is how transcription platforms will keep you tied to their paying service. Increasingly the need to share data and models openly has come into focus. For example [HTR United](https://github.com/HTR-United/htr-united) is an ininiative to collect various HTR/OCR transcription datasets using a common meta-data scheme to break this pattern.
+
+## Annotating {#sec-annotating}
+
+One of the ways to fix OOD issues of machine learning models is to annotate representative data and retrain your model using these data. Conceptually this annotation process is easy. However, text annotation is a time consuming and often difficult process. It combines the need for domain knowledge (skills such as reading of cursive are becoming rare) with a very tedious task. The goal is not to understand the text but to merely gather training data. Some of the software solutions (See @sec-software) such as eScriptorium, Transkribus, OCR4all provide annotation abilities within their platform. Other options are using open source annotation software/platforms such as [CVAT.ai](https://www.cvat.ai/).
+
+### Citizen science
+
+Alternative options to create training data include the use of [community/citizen science]() platforms, such as [Zooniverse](https://www.zooniverse.org/). Here, the annotation of texts is outsourced to volunteers. This works well assuming that the text to be transcribed has a sizable user base. A language which is only written by a small number of people is less likely to be easily transcribed, as many replicates are required for quality control. It must be noted that community/citizen science is not a way to get "free data". When done properly there should be a good rapport between the community which one engages, and the scientists executing the research.
+
+## Data augmentation
+
+Sufficient data is key in training a ML model which performs well. However, at times you might be limited in the data you can access for training, even after gathering additional annotations. Data augmentation is a way to slightly alter a smaller existing dataset in order to create a larger, partially, artificial dataset. Within the context of HTR/OCR one can generate slight variations of the same text image and label pair through computer vision (or machine learning) based alterations, such as rotating skewing and introducing noise to the image.
+
+```{r}
+#| label: fig-data-augmentation
+#| fig-cap: "Data augmentation examples on the French word Juillet"
+#| fig-align: "center"
+#| out-width: "100%"
+#| echo: FALSE
+knitr::include_graphics("./images/image_augmentation.png")
+```
+
+Do not underestimate the power of image augmentation to make your HTR/OCR algorithm more robust. Where you have control over this process it is advisable to use it (in some of the platforms it is automatically integrated in model training steps). In this context, it is also generally a poor idea to apply extensive computer vision based pre-processing (see @sec-pre-processing ) to the text, outside proper cropping or aligning of the pages. Especially, binarization of images (converting from RGB to black and white only) can produce unstable HTR output, as the pre-processing step has an outside influence as it is linked to data loss. Conversely, image augmentation by introducing noise can make results more robust to these disturbances, real or not.
+
+### Synthetic data
+
+Taking image augmentation to the extreme is the [creation of synthetic data](https://arxiv.org/html/2402.10798). Here, you don not transform original data but create a fully artificial dataset. This approach often requires custom scripts, but might be a way to sidestep the annotation of texts.

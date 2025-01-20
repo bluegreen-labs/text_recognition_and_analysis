@@ -1,4 +1,4 @@
-# Introduction
+# Introduction {#sec-introduction}
 
 Understanding or translating large volumes of handwritten historical text is critical for historical analysis preservation of text, dissemination of knowledge and valorization of archived measurements and/or other scientific observations. However, reading and processing these large volumes of historical texts (at scale) is often difficult and time consuming. The automation of this process would therefore help in many historical analysis, data recovery and other digital preservation efforts.
 
@@ -8,15 +8,13 @@ Handwritten text recognition (HTR), contrary to optical character recognition (O
 
 Generally, an HTR/OCR workflow follows two general steps: line/text detection and text transcription. The former detects lines or written text, once detected these lines or text elements are evaluated one-by-one using a text transcription method and combined to form the final digital text document.
 
-HIGHLIGHT/REFERENCE THE COLOURED BITS IN THE FIGURE
-
 ```{r}
 #| label: fig-workflow
-#| fig-cap: "The HTR/OCR workflow, from image acquisition to transcribed HTR/OCR results."
+#| fig-cap: "The HTR/OCR workflow, from image acquisition to transcribed HTR/OCR results. Light yellow highlights the image acquisition and pre-processing (see Chapter 2 and 3), blue and green areas deal with the machine learning processing (Chapter 3 and 4). The green area deals with the training of machine learning models discussed in Chapter 4 and 5."
 #| fig-align: "left"
 #| out-width: "100%"
 #| echo: FALSE
 knitr::include_graphics("./images/HTR_workflow.drawio.svg")
 ```
 
-Depending on the framework or workflow different machine learning (ML) methods of text detection and transcription will be used. It is also key to understand that from a practical computer science perspective the problem of HTR/OCR is solved. Although algorithmic improvements will continue to be developed the current state-of-the-art machine learning (ML) methods perform well for many applications. Most of these algorithms, in the abstract, are relatively easy to understand and with today's software libraries and platforms even quicker to implement. I will briefly discuss various algorithms in section XYZ. A list of common frameworks and software is given in chapters XYZ.
+Depending on the framework or workflow different machine learning (ML) methods of text detection and transcription will be used. It is also key to understand that from a practical computer science perspective the problem of HTR/OCR is solved. Although algorithmic improvements will continue to be developed the current state-of-the-art machine learning (ML) methods perform well for many applications. Most of these algorithms, in the abstract, are relatively easy to understand and with today's software libraries and platforms even quicker to implement. I will briefly discuss various algorithms in @sec-machine-learning. A list of common frameworks and software is given in @sec-software .

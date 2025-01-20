@@ -1,31 +1,41 @@
----
-title: "Digitization"
-format: html
----
+# Digitization {#sec-digitization}
 
-Although this course focuses on text recognition and analysis it is important to note that digitization, the quality of the images and the consistent collection of meta-data, is key to all subsequent processing. If you start a project where the digitization is not yet completed you should consider the importance of the digitization step within the context of all subsequent post-processing and text recognition workflows.
+Although this reference manual focuses on text recognition and analysis it is important to note that digitization, and the quality of the images and the consistent collection of meta-data, is key to all subsequent processing. If you start a project where the digitization is not yet completed you should consider the importance of the digitization step within the context of all subsequent post-processing and text recognition workflows.
 
 The quality of the collected image data and the availability of meta-data has a profound impact on your workflow. Preemptively addressing image quality and meta-data issues can save significant time and effort, even when taking up some more time in planning and data collection.
 
-Some general guidelines for digitization therefore include:
+Common issues are the introduction of noise and lack of contrast of the text due to bleed through of the structure of the paper, or data on the other side of a page. Within the context of COBECORE a quick comparison between using either a black or white matte background showed a large jump in the noise level for a black matte. A white matte background was used in the final digitization to boost contrast.
 
-- ensuring a proper digitization setup
-  - high quality optics (high f-stop value for sharpness)
-  - uniform shadowless illumination using multiple lights and ring lights
-  - avoid harsh flash based setups (protecting sensitive manuscripts)
-- ensuring a fixed digitization protocol
-  - fixed sequence of tasks involved
-  - well documented
-  - collect extensive meta-data when feasible
-- ensuring dynamic back-ups to prevent data loss
+```{r}
+#| label: fig-contrast
+#| fig-cap: "Differences in text contrast when using different matte backgrounds, white or black, during digitization (note that the different white balance changes the overall tone of the image)."
+#| fig-align: "center"
+#| out-width: "30%"
+#| echo: FALSE
+knitr::include_graphics("./images/background_comparison.gif")
+```
 
-Finally, if not within your domain expertise reach out to your local collection managers for support and input on all these aspects.
+## Basic digitization equipment
+
+A basic digitization setup consists of:
+
+- a digital camera (DSLR or mirrorless equivalent) and high quality optics (~1000 EURO)
+- a [tripod with a horizontal boom](https://www.kentfaith.nl/KF09.086_94%22-240cm-camera-statief-lichtgewicht-reisstatief-22lbs-10kg-belasting-met-afneembare-monopod-voor-dslr-%20slr) or a reproduction table (~150 EURO)
+- a (ring) light setup or plenty of available (natural) light casting no shadows, do not use flash lights (~50 EURO)
+- a background matte (<10 EURO)
+- a fixation option to keep data records in place (think of magnets, binder klips etc.) (<10 EURO)
+
+The most basic setup will cost you less than 1500 EURO. Using a good reproduction table and cold lights will cost more, but does not necessarily yield better results.
 
 ```{r}
 #| label: fig-digitzation
-#| fig-cap: "The COBECORE digitization station, including a reproduction stand, cold lights, a DSLR camera and a black matte background"
+#| fig-cap: "The COBECORE digitization station, including a reproduction stand, cold lights and ring light, a DSLR camera, a black matte background around the document, and a laptop computer with external hard drive for storage and backups."
 #| fig-align: "center"
 #| out-width: "50%"
 #| echo: FALSE
 knitr::include_graphics("./images/digistation.jpg")
 ```
+
+## General guidelines
+
+In addition to the physical setup of the camera and lights, you will need a computer with sufficient storage capacity and a (institutional) backup solution. To ensure consistent digitization a protocol should be written to detail a fixed sequence of tasks, including the collection of meta-data. Finally, if these aspects are not within your domain of expertise reach out to your local collection managers for support and input!

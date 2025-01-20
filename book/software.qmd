@@ -1,7 +1,4 @@
----
-title: "HTR/OCR software and data"
-format: html
----
+# HTR/OCR software {#sec-software}
 
 Within the context of text recognition and analysis there are number of commercial and open-source options available. Below I will list the most common frameworks and some of their advantages and disadvantages. An in-depth discussion on how best to chose a framework within the context of your project is given in the next chapter (REFERENCE).
 
@@ -103,15 +100,3 @@ All these libraries provide machine learning setups to train handwritten text re
 | ------------- | ------------- |
 | flexible | complex installation
 | full workflow control | coding required
-
-## Data
-
-Methodologically (see above) the problem of text transcription seems to be solved, with various software solutions available. So, what is holding back (universal) open-source HTR/OCR? Generally, data is what holds back HTR in practice. 
-
-Given the many variations in handwritten text ML algorithms need to be trained ("see") a wide variety of handwritten text characters to be able to firstly translate similarly styled handwritten text, secondly potentially apply this to other adjacent styles. How close two documents are in writing style determines how well a trained model will perform on this task. 
-
-Consequently, the more variations in handwritten text styles you train an ML algorithm on the easier it will be to transcribe a wide variety of text styles. In short, the bottleneck in automated transcription is gathering sufficient training data (for your use case). Although the ML code might be open-source many large training datasets are not always shared as generously. It can be argued that within the context of FAIR research practices ML code disseminated without the training data, or model parameters, for a particular study is decidedly not open-source. A similar argument has been made within the context of the recent flurry of supposedly open-source Large Language Models (LLMs), such as ChatGPT.
-
-The lack of access to both the training data, or a pre-trained model, limits the re-use of the model in a new context. One can not take a model and fine-tune it, i.e. let it "see" new text styles. In short, if you only have the underlying model code you always have to train a model from scratch (anew) using your own, often limited, dataset. This context is important to understand, as this is how transcription platforms will keep you tied to their paying service. It is important to understand these dynamics.
-
-Increasingly the need to share data and models openly has come into focus. For example [HTR United](https://github.com/HTR-United/htr-united) is an ininiative to collect various HTR/OCR transcription datasets using a common meta-data scheme to break this pattern.

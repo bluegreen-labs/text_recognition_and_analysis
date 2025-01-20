@@ -1,37 +1,15 @@
----
-title: "Tips and tricks"
-format: html
----
+# Tips and tricks {#sec-tricks}
 
-## Capacity building
+As highlighted in the project management section the scale of your project and the capacity of your team define the optimal approach. However, across the four scenarios provided a common notion is important, **capacity building** for the longevity of projects.
 
-As highlighted in the project management section the scale of your project and the capacity of your team define the optimal approach. However, across the four scenarios provided a common notion is important, **capacity building**.
+Within an academic context contracts are often limited in time, funds scarce. In addition, people move frequently between positions search for more stable or better paid (research) positions. This presents the danger of knowledge leakage. Preventing this slow trickle of disappearing knowledge requires redundancy in your project management approach, where the responsibility of key transcription components are not the sole responsibility of one person. Generally, this advice does not only apply to transcription projects, but most academic endeavours. 
 
-Within an academic context contracts are often limited in time. In addition, people move frequently between positions search for more stable (research) positions. This presents the danger of knowledge leakage. Preventing this slow trickle of disappearing knowledge requires redundancy in your project management approach, where the responsibility of key transcription components are not the sole responsibility of one person. Generally, this advice does not only apply to transcription projects, but most academic endeavours. 
+## Mentoring
 
 When teaching people transcription workflows, or the setup of a particular piece of software, do so in pairs. In addition, extensively document the process. Although courses and documentation exists for all software discussed these are generalized workflows and do not account for idiosyncrasies within your dataset.
 
-## Text annotation
+When using annotation (@sec-annotating) to provide tailored training data divide this task among trusted authorities, such as students, might speed up this process. Having a good manual at hand and the capacity within a research team to quickly teach this to someone new is key to the success of such an approach. Regardless, do not underestimate the time you need to invest in this process, so make it worth your while an pick your battles carefully.
 
-Text annotation is a time consuming and often difficult process. It often combines the need for domain knowledge with a very tedious task, as the goal is not to understand the text but to gather data. Dividing this task among trusted authorities such as student contributions might speed up this process. Once, as mentioned above, having a good manual at hand and the capacity within a research team to quickly teach this to someone new is key to the success of such an approach. Regardless, do not underestimate the time you need to invest in this process, so make it worth your while an pick your battles carefully.
+## Community/Citizen science
 
-### Citizen science
-
-Alternative options to create training data include the use of citizen science platforms, such as Zooniverse (LINK). This is a valid strategy, which also includes an outreach component. However, citizen science is not a way to get "free data". When done properly there is a good rapport between the community which one engages with and their efforts. Most citizen science efforts will require half an hour of someone's time to keep going, provide feedback and intermittent results to keep the community motivated. Furthermore, one should use citizen science because it is an easy way to get (training) data while not all other options such as data augmentation on smaller datasets have been exhausted. The latter approaches are often required regardless of data size. Assessing the accuracy of suite of models is required before concluding that more training data is needed, than can reasonably be generated within a team.
-
-## Data augmentation
-
-Do not underestimate the power of image augmentation to make your HTR/OCR algorithm more robust. Where you have control over this process it is advisable to use it. In this context, it is also generally a poor idea to apply extensive computer vision based pre-processing to the text, outside proper cropping or aligning of the pages. Especially, binarization of images (converting from RGB to black and white only) can produce unstable HTR output, as the pre-processing step has an outside influence as it is linked to data loss. Conversely, image augmentation by introducing noise can make results more robust to these disturbances, real or not.
-
-```{r}
-#| label: fig-data-augmentation
-#| fig-cap: "Data augmentation examples on the French word Juillet, including a binarization bottom left."
-#| fig-align: "center"
-#| out-width: "100%"
-#| echo: FALSE
-knitr::include_graphics("./images/image_augmentation.png")
-```
-
-### Synthetic data
-
-Taking image augmentation to the extreme is the creation of synthetic data. Here, you don not transform original data but create a fully artificial dataset. This approach often requires custom scripts, but might be a way to sidestep the annotation of texts.
+Most community/citizen science efforts will require half an hour of someone's time to keep going, provide feedback and intermittent results to keep the community motivated. Furthermore, one should use citizen science because it is an easy way to get (training) data while not all other options such as data augmentation on smaller datasets have been exhausted. The latter approaches are often required regardless of data size. Assessing the accuracy of suite of models is required before concluding that more training data is needed than can reasonably be generated within a team.

@@ -1,20 +1,17 @@
----
-title: "Project management"
-format: html
----
+# Project management {#sec-project-management}
 
 I have shown that there is a wide selection of HTR/OCR software to chose from, largely divided between commercial supported and scalable solutions and their open-source alternatives. However, it is important to consider all potential factors in a cost-benefit analysis before settling on a final strategy for data transcription. Below I break down factors influencing cost, and provide a number of strategies for a range of projects (taking into account the cost-benefit factor).
 
 ## Cost
 
-Generally two factors should be considered, full cost at scale and interoperability.
+Generally two factors should be considered, full cost at **scale** and **interoperability**.
 
 ### Scale
 
 Many transcription projects suffer from the law of large numbers, or in this case death by a thousand paper cuts. In short, data processing at a small cost will blow up to a significant sum given enough data. To illustrate how cost at scale can blow up quickly I will use my own [COBECORE project](https://cobecore.org) output as an example. In this project ~75K tables (pages) of climate data were digitized and partially transcribed through citizen science.
 
 When considering for example the Transcribus project as a potential option for transcription I calculated that
-the extraction of tables (1 credit), and its fields (1 credit), and text detection and transcription (1 credit) will require 3 credits per page. For the ~75K tables in the archive this would represent 225K Transkribus credits, with a data volume > 200GB a Team plan is required which would generate a cost of 60 000 EURO. This is under the assumption that no re-runs are required (i.e. a perfect result on a first pass). Experience teaches that ML is often iterative, and the true costs will probably be far higher (easily double the simplest estimate). Various vision APIs of Google or Amazon are cheaper, but don’t allow for easy training and requires coding, in which case you will have to add a (cloud) data engineer/scientist. This shows that when tasks become large, with more complex workflows, alternatives might be cost effective, especially if you are paying a software developer anyway. 
+the extraction of tables (1 credit), and its fields (1 credit), and text detection and transcription (1 credit) will require 3 credits per page. For the ~75K tables in the archive this would represent 225K Transkribus credits, with a data volume > 200GB a Team plan is required which would generate a cost of **60 000 EURO**. This is under the assumption that no re-runs are required (i.e. a perfect result on a first pass). Experience teaches that ML is often iterative, and the true costs will probably be far higher (easily double the simplest estimate). Various vision APIs of Google or Amazon are cheaper, but don’t allow for easy training and requires coding, in which case you will have to add a (cloud) data engineer/scientist. This shows that when tasks become large, with more complex workflows, alternatives might be cost effective, especially if you are paying a software developer anyway. 
 
 ### Interoperability
 
