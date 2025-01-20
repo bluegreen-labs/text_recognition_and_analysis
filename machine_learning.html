@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Computer vision and machine learning – Text digitization, recognition and analysis</title>
+<title>4&nbsp; Machine Learning – Text digitization, recognition and analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./software.html" rel="next">
-<link href="./digitization.html" rel="prev">
+<link href="./data.html" rel="next">
+<link href="./pre-processing.html" rel="prev">
 <link href="./figures/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -42,8 +42,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-7e4af58bafdf0ee8a2668619ecca0679.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-6284fece335cc2e32bd4191e650e0cb2.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-63d57e0854a13fa29d5ca5abb38cbcb0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-ecf0e563fd50954ab5b16c08fb161912.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -73,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta name="twitter:title" content="3&nbsp; Computer vision and machine learning – Text digitization, recognition and analysis">
+<meta name="twitter:title" content="4&nbsp; Machine Learning – Text digitization, recognition and analysis">
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="./images/Conv_no_padding_no_strides.gif">
 <meta name="twitter:card" content="summary_large_image">
@@ -133,7 +133,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ml_methods.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Computer vision and machine learning</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./machine_learning.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Machine Learning</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -165,26 +165,38 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ml_methods.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Computer vision and machine learning</span></span></a>
+  <a href="./pre-processing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Pre-processing</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./machine_learning.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Machine Learning</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data (generation)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./software.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">HTR/OCR software and data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">HTR/OCR software</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./project_management.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Project management</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Project management</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tips_tricks.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tips and tricks</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Tips and tricks</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -203,18 +215,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#computer-vision" id="toc-computer-vision" class="nav-link active" data-scroll-target="#computer-vision"><span class="header-section-number">3.1</span> Computer vision</a></li>
-  <li><a href="#machine-learning" id="toc-machine-learning" class="nav-link" data-scroll-target="#machine-learning"><span class="header-section-number">3.2</span> Machine Learning</a>
-  <ul class="collapse">
-  <li><a href="#detecting-patterns-convolutional-neural-networks-cnn" id="toc-detecting-patterns-convolutional-neural-networks-cnn" class="nav-link" data-scroll-target="#detecting-patterns-convolutional-neural-networks-cnn"><span class="header-section-number">3.2.1</span> Detecting patterns: convolutional neural networks (CNN)</a></li>
-  <li><a href="#memory-and-context-recurrent-neural-networks" id="toc-memory-and-context-recurrent-neural-networks" class="nav-link" data-scroll-target="#memory-and-context-recurrent-neural-networks"><span class="header-section-number">3.2.2</span> Memory and context: recurrent neural networks</a></li>
-  <li><a href="#negative-space-connectionist-temporal-classification" id="toc-negative-space-connectionist-temporal-classification" class="nav-link" data-scroll-target="#negative-space-connectionist-temporal-classification"><span class="header-section-number">3.2.3</span> Negative space: connectionist temporal classification</a></li>
-  <li><a href="#data-augmentation" id="toc-data-augmentation" class="nav-link" data-scroll-target="#data-augmentation"><span class="header-section-number">3.2.4</span> Data augmentation</a></li>
-  </ul></li>
-  <li><a href="#implementation" id="toc-implementation" class="nav-link" data-scroll-target="#implementation"><span class="header-section-number">3.3</span> Implementation</a>
-  <ul class="collapse">
-  <li><a href="#out-of-distribution-generalization-in-text-transcription" id="toc-out-of-distribution-generalization-in-text-transcription" class="nav-link" data-scroll-target="#out-of-distribution-generalization-in-text-transcription"><span class="header-section-number">3.3.1</span> Out-of-distribution generalization in text transcription</a></li>
-  </ul></li>
+  <li><a href="#detecting-patterns-convolutional-neural-networks-cnn" id="toc-detecting-patterns-convolutional-neural-networks-cnn" class="nav-link active" data-scroll-target="#detecting-patterns-convolutional-neural-networks-cnn"><span class="header-section-number">4.0.1</span> Detecting patterns: convolutional neural networks (CNN)</a></li>
+  <li><a href="#memory-and-context-recurrent-neural-networks" id="toc-memory-and-context-recurrent-neural-networks" class="nav-link" data-scroll-target="#memory-and-context-recurrent-neural-networks"><span class="header-section-number">4.0.2</span> Memory and context: recurrent neural networks</a></li>
+  <li><a href="#negative-space-connectionist-temporal-classification" id="toc-negative-space-connectionist-temporal-classification" class="nav-link" data-scroll-target="#negative-space-connectionist-temporal-classification"><span class="header-section-number">4.0.3</span> Negative space: connectionist temporal classification</a></li>
+  <li><a href="#the-cnnlstmctc-implementation" id="toc-the-cnnlstmctc-implementation" class="nav-link" data-scroll-target="#the-cnnlstmctc-implementation"><span class="header-section-number">4.1</span> The CNN+LSTM+CTC implementation</a></li>
+  <li><a href="#transformers" id="toc-transformers" class="nav-link" data-scroll-target="#transformers"><span class="header-section-number">4.2</span> Transformers</a></li>
   </ul>
 </nav>
     </div>
@@ -223,7 +228,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Computer vision and machine learning</span></h1>
+<h1 class="title"><span id="sec-machine-learning" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Machine Learning</span></span></h1>
 </div>
 
 
@@ -240,28 +245,14 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>As highlighted in Figure 2.1, there are two main ML components to HTR/OCR transcription workflows, a segmentation component and a text transcription component. To understand the software (frameworks) for HTR/OCR solutions a brief introduction in ML and computer vision methods is required. This allows you to understand potential pitfalls better.</p>
-<section id="computer-vision" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="computer-vision"><span class="header-section-number">3.1</span> Computer vision</h2>
-<p>Although computer vision methods, broadly, include ML methods the classical approaches differ significantly from ML methods. Classic computer vision methods, as discussed below LINK, are applied on pixel (region) or image based transformation. These methods are often used in the pre-processing of images before a machine learning algorithm is applied (FIGURE LINK). Classical examples are the removal of <a href="https://en.wikipedia.org/wiki/Adaptive_histogram_equalization">uneven lighting across an image using adaptive histogram equalization</a>, the detection of structuring elements such as <a href="https://en.wikipedia.org/wiki/Hough_transform">linear features using a Hough transform</a>, or the <a href="https://en.wikipedia.org/wiki/Thresholding_(image_processing)">adaptive thresholding of an image</a> from colour to black-and-white only. These algorithms also serve an important role in the creation of additional data from a single reference dataset, through data augmentation LINK.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div id="fig-cv" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-cv-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="https://docs.opencv.org/3.4/ada_threshold.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cv-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.1: Example of various thresholding methods as implemented in the OpenCV computer vision library (https://opencv.org)
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="machine-learning" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="machine-learning"><span class="header-section-number">3.2</span> Machine Learning</h2>
 <p>The machine learning components of the text segmentation and transcriptions rely on common machine learning algorithms and logic. To better understand these tasks, and how training methods influences the success of these models, I will summarize some of these common building blocks. These are vulgarized and simplified descriptions to increase the broad understanding of these processes, for in depth discussions I refer to the linked articles in the text and machine learning textbooks at the end of this course.</p>
+<p>Machine learning models are non-deterministic and rely on learning or training (an optimization method) on ground truth (reference) data. The most simple machine learning algorithm is a simple linear regression. In a simple linear regression one optimizes (trains) a slope and intercept parameter to fit the observed response (ground truth) to explanatory variables (data). For more complex tasks, with more parameters, more data are required. Although oversimplified, the very tongue in cheek cartoon by <a href="https://xkcd.com/">XKCD</a> (<a href="#fig-training" class="quarto-xref">Figure&nbsp;<span>4.1</span></a>) is a good mental model of what happens on an abstract level where we shuffle model parameters until we get good correspondence between the data input and the ground truth observations.</p>
+<p>From this one can deduce a number of key take-home message:</p>
+<ul>
+<li>a sufficient amount of training data is needed (the pile)</li>
+<li>an appropriate ML and shuffling (optimization) algorithm (stir the pile)</li>
+<li>a ML model is limited by the representations within the training data (we can only tell something about our own pile)</li>
+</ul>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-training" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
@@ -270,22 +261,15 @@ Figure&nbsp;3.1: Example of various thresholding methods as implemented in the O
 <img src="https://imgs.xkcd.com/comics/machine_learning.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-training-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.2: Machine Learning as summarized by XKCD (https://xkcd.com/1838/)
+Figure&nbsp;4.1: Machine Learning as summarized by XKCD (https://xkcd.com/1838/)
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Machine learning models are non-deterministic and rely on learning or training (an optimization method) on ground truth (reference) data. The most simple machine learning algorithm is a simple linear regression. In a simple linear regression one optimizes (trains) a slope and intercept parameter to fit the observed response (ground truth) to explanatory variables (data). The more complex the task, the more parameters and data are required. Although oversimplified, the very tongue in cheek cartoon by XKCD is a good mental model of what happens on an abstract level where we shuffle model parameters until we get good correspondence between the data input and the ground truth observations.</p>
-<p>From this one can deduce a number of key take-home message:</p>
-<ul>
-<li>a sufficient amount of training data</li>
-<li>an appropriate ML and shuffling (optimization) algorithm</li>
-<li>a ML model is limited by the representations within the training data</li>
-</ul>
-<section id="detecting-patterns-convolutional-neural-networks-cnn" class="level3" data-number="3.2.1">
-<h3 data-number="3.2.1" class="anchored" data-anchor-id="detecting-patterns-convolutional-neural-networks-cnn"><span class="header-section-number">3.2.1</span> Detecting patterns: convolutional neural networks (CNN)</h3>
-<p>The analysis of images within the context of machine learning often (but not exclusively) happens using a convolutional neural networks (CNNs). Conceptually a CNN can be see as taking sequential sections of the image and summarizing them (i.e.&nbsp;convolve them) using a function (a filter), to a lower aggregated resolution (FIGURE XYZ). This reduces the size of the image, while at the same time while summarizing a certain characteristic using a filter function. One of the most simple functions would be taking the average value across a 3x3 window.</p>
+<section id="detecting-patterns-convolutional-neural-networks-cnn" class="level3" data-number="4.0.1">
+<h3 data-number="4.0.1" class="anchored" data-anchor-id="detecting-patterns-convolutional-neural-networks-cnn"><span class="header-section-number">4.0.1</span> Detecting patterns: convolutional neural networks (CNN)</h3>
+<p>The analysis of images within the context of machine learning often (but not exclusively) happens using a convolutional neural networks (CNNs). Conceptually a CNN can be seen as taking sequential sections of the image and summarizing them (i.e.&nbsp;convolve them) using a function (a filter), to a lower aggregated resolution (<a href="#fig-convolution" class="quarto-xref">Figure&nbsp;<span>4.2</span></a>). This reduces the size of the image, while at the same time while summarizing a certain characteristic, using a filter function. One of the most simple functions would be taking the average value across a 3x3 window.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-convolution" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
@@ -294,20 +278,20 @@ Figure&nbsp;3.2: Machine Learning as summarized by XKCD (https://xkcd.com/1838/)
 <img src="./images/Conv_no_padding_no_strides.gif" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:30.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-convolution-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.3: An example convolution of a 3x3 window across a larger blue image summarizing values (squares) to a smaller green image (by Kaivan Kamali at https://galaxyproject.org/)
+Figure&nbsp;4.2: An example convolution of a 3x3 window across a larger blue image summarizing values (squares) to a smaller green image (by Kaivan Kamali at https://galaxyproject.org/)
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>It is important to understand this concept within the context of text recognition and classification tasks in general. It highlights the fact that ML algorithms do not “understand” (handwritten) text. Where people can make sense of handwritten text by understanding the flow, in addition to recognizing patterns, ML approaches focus on patterns, shapes or forms. However, some form of memory can be included using other methods.</p>
+<p>It is important to understand this concept within the context of text recognition and classification tasks in general. It highlights the fact that ML algorithms do not “understand” (handwritten) text. Where people can make sense of handwritten text by understanding the flow, in addition to recognizing broader patterns, ML approaches focus on patterns, shapes or forms. However, some form of memory can be included using other methods.</p>
 </section>
-<section id="memory-and-context-recurrent-neural-networks" class="level3" data-number="3.2.2">
-<h3 data-number="3.2.2" class="anchored" data-anchor-id="memory-and-context-recurrent-neural-networks"><span class="header-section-number">3.2.2</span> Memory and context: recurrent neural networks</h3>
-<p>A second component to many recognition tasks is a form of memory. Where the CNN encodes for patterns it does so without explicitly taking into account the relative position of these patterns and their relationship to adjacent ones. Here, Recurrent Neural Networks (<a href="https://en.wikipedia.org/wiki/Recurrent_neural_network">RNN</a>) and Long Short-Term Memory (<a href="https://en.wikipedia.org/wiki/Long_short-term_memory">LSTM</a>) networks provide a solution. These algorithms allow for some of the information of adjacent data (either in time or space) to be retained to provide context on the current (time or space) position. Both these approaches can be uni- or bi-directional. In the former, the direction of processing matters in the latter it doesn’t.</p>
+<section id="memory-and-context-recurrent-neural-networks" class="level3" data-number="4.0.2">
+<h3 data-number="4.0.2" class="anchored" data-anchor-id="memory-and-context-recurrent-neural-networks"><span class="header-section-number">4.0.2</span> Memory and context: recurrent neural networks</h3>
+<p>A second component to many recognition tasks is a form of memory. Where the CNN encodes for patterns it does so without explicitly taking into account the relative position of these patterns and their relationship to adjacent ones. Here, Recurrent Neural Networks (<a href="https://en.wikipedia.org/wiki/Recurrent_neural_network">RNN</a>) and Long Short-Term Memory (<a href="https://en.wikipedia.org/wiki/Long_short-term_memory">LSTM</a>) networks provide a solution. These algorithms allow for some of the information of adjacent data (either in time or space) to be retained to provide context on the current (time or space) position. Both these approaches can be uni- or bi-directional. In the former, the direction of processing matters in the latter it doesn’t. For text recognition the direction does not matter, and it is common to see bi(directional)-LSTM networks in recognition models.</p>
 </section>
-<section id="negative-space-connectionist-temporal-classification" class="level3" data-number="3.2.3">
-<h3 data-number="3.2.3" class="anchored" data-anchor-id="negative-space-connectionist-temporal-classification"><span class="header-section-number">3.2.3</span> Negative space: connectionist temporal classification</h3>
+<section id="negative-space-connectionist-temporal-classification" class="level3" data-number="4.0.3">
+<h3 data-number="4.0.3" class="anchored" data-anchor-id="negative-space-connectionist-temporal-classification"><span class="header-section-number">4.0.3</span> Negative space: connectionist temporal classification</h3>
 <p>In speech and written text much of the structure is defined not only by what is there, the spoken and written words, but also what is not there, the pauses and spacing. Taken to the extreme the expressionist / dadaist poem “Boem paukeslag” by <a href="https://en.wikipedia.org/wiki/Paul_van_Ostaijen">Paul van Ostaijen</a> is an example of irregularity in typeset text. These irregularities or negative space in the pace of writing is another hurdle for text recognition algorithms. Generally, we want a readable text as output of our ML models not dadaist impressions with large gaps.</p>
 <div class="cell" data-layout-align="left">
 <div class="cell-output-display">
@@ -317,7 +301,7 @@ Figure&nbsp;3.3: An example convolution of a 3x3 window across a larger blue ima
 <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Boempaukeslag.jpg" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:30.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-boem-paukenslag-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.4: Boem paukenslag by Paul van Ostaijen
+Figure&nbsp;4.3: Boem paukenslag by Paul van Ostaijen
 </figcaption>
 </figure>
 </div>
@@ -332,38 +316,23 @@ Figure&nbsp;3.4: Boem paukenslag by Paul van Ostaijen
 <img src="images/ctc_loss_Hannun.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ctc-loss-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.5: A visualization of the CTC algorithm adapted from Hannun, ‘Sequence Modeling with CTC’, Distill, 2017. doi: 10.23915/distill.00008
+Figure&nbsp;4.4: A visualization of the CTC algorithm adapted from Hannun, ‘Sequence Modeling with CTC’, Distill, 2017. doi: 10.23915/distill.00008
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="data-augmentation" class="level3" data-number="3.2.4">
-<h3 data-number="3.2.4" class="anchored" data-anchor-id="data-augmentation"><span class="header-section-number">3.2.4</span> Data augmentation</h3>
-<p>Sufficient data is key in training a ML model which performs well. However, at times you might be limited in the data you can access for training. A common issue is that limited ground truth data (labels, text transcriptions) are available. Data augmentation is a way to slightly alter a smaller existing dataset in order to create a larger, partially, artificial dataset. Within the context of HTR/OCR one can generate slight variations of the same text image and label pair through computer vision (or machine learning) based alterations, such as rotating skewing and introducing noise to the image.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div id="fig-data-augmentation" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-data-augmentation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="./images/image_augmentation.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data-augmentation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.6: Data augmentation examples on the French word Juillet
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
+<section id="the-cnnlstmctc-implementation" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="the-cnnlstmctc-implementation"><span class="header-section-number">4.1</span> The CNN+LSTM+CTC implementation</h2>
+<p>Putting all the pieces together the most common ML implementation of text segmentation rely heavily on CNN based segmentation networks, while text recognition often if not always takes the form of a CNN + (bidirectional) LSTM/RNN + CTC network. When reading technical documentation on the architecture of models in text transcription frameworks you might come across these terms. Depending on the implementation or framework used data augmentation (see next section) during training might be provided to increase the scope of the model and increase the chances of Out-Of-Distribution (OOD) generalization.</p>
 </section>
-</section>
-<section id="implementation" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="implementation"><span class="header-section-number">3.3</span> Implementation</h2>
-<p>Putting all the pieces together the most common ML implementation of text segmentation rely heavily on CNN based segmentation networks, while text recognition often if not always takes the form of a CNN + (bidirectional) LSTM/RNN + CTC network. When reading technical documentation on the architecture of models in text transcription frameworks you might come across these terms. Depending on the implementation or framework used data augmentation during training might be provided to increase the scope of the model and increase the chances of Out-Of-Distribution (OOD) generalization.</p>
-<section id="out-of-distribution-generalization-in-text-transcription" class="level3" data-number="3.3.1">
-<h3 data-number="3.3.1" class="anchored" data-anchor-id="out-of-distribution-generalization-in-text-transcription"><span class="header-section-number">3.3.1</span> Out-of-distribution generalization in text transcription</h3>
-<p>Handwritten text or old print is highly varying in shape form and retained quality. This pushes trained models towards poor performance as the chances of good OOD generalization are small. In short, two text styles are rarely the same or not similar enough for a trained model to be transferred to a new, seemingly similar, transcription task.</p>
+<section id="transformers" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="transformers"><span class="header-section-number">4.2</span> Transformers</h2>
+<p>Transformer based OCR (TrOCR) is new breed of HTR algorithms based on the <a href="https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)">transformer architecture</a>, providing an alternative to the CNN+LSTM+CTT workflow. Unlike the CNN+LSTM+CTC approach TrOCR does not use convolution but chops up an image context window into adjacent subsets combined with a positional (spatio-temporal) marker. Equivalent to the convolutional setup it retains feature and spatio-temporal marker in decoding a sequence.</p>
+<section id="multi-modal-llm" class="level4" data-number="4.2.0.1">
+<h4 data-number="4.2.0.1" class="anchored" data-anchor-id="multi-modal-llm"><span class="header-section-number">4.2.0.1</span> multi-modal LLM</h4>
+<p>Multi-modal large language models such as ChatGPT leverage the Transformer architecture and use them on an incredibly large scale, using mostly text, but also annotated image data. This allows these LLM (chatbots) to make sense of images of text.</p>
 
 
 </section>
@@ -933,13 +902,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./digitization.html" class="pagination-link" aria-label="Digitization">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Digitization</span></span>
+      <a href="./pre-processing.html" class="pagination-link" aria-label="Pre-processing">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Pre-processing</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./software.html" class="pagination-link" aria-label="HTR/OCR software and data">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">HTR/OCR software and data</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./data.html" class="pagination-link" aria-label="Data (generation)">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data (generation)</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

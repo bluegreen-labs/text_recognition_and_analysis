@@ -42,8 +42,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-7e4af58bafdf0ee8a2668619ecca0679.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-6284fece335cc2e32bd4191e650e0cb2.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-63d57e0854a13fa29d5ca5abb38cbcb0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-ecf0e563fd50954ab5b16c08fb161912.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -165,26 +165,38 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ml_methods.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Computer vision and machine learning</span></span></a>
+  <a href="./pre-processing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Pre-processing</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./machine_learning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Machine Learning</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data (generation)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./software.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">HTR/OCR software and data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">HTR/OCR software</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./project_management.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Project management</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Project management</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tips_tricks.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tips and tricks</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Tips and tricks</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -212,7 +224,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></h1>
+<h1 class="title"><span id="sec-introduction" class="quarto-section-identifier"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></h1>
 </div>
 
 
@@ -234,7 +246,6 @@ ul.task-list li input[type="checkbox"] {
 <section id="the-htrocr-workflow" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="the-htrocr-workflow"><span class="header-section-number">1.1</span> The HTR/OCR workflow</h2>
 <p>Generally, an HTR/OCR workflow follows two general steps: line/text detection and text transcription. The former detects lines or written text, once detected these lines or text elements are evaluated one-by-one using a text transcription method and combined to form the final digital text document.</p>
-<p>HIGHLIGHT/REFERENCE THE COLOURED BITS IN THE FIGURE</p>
 <div class="cell" data-layout-align="left">
 <div class="cell-output-display">
 <div id="fig-workflow" class="quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left">
@@ -243,13 +254,13 @@ ul.task-list li input[type="checkbox"] {
 <img src="./images/HTR_workflow.drawio.svg" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:100.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-workflow-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1.1: The HTR/OCR workflow, from image acquisition to transcribed HTR/OCR results.
+Figure&nbsp;1.1: The HTR/OCR workflow, from image acquisition to transcribed HTR/OCR results. Light yellow highlights the image acquisition and pre-processing (see Chapter 2 and 3), blue and green areas deal with the machine learning processing (Chapter 3 and 4). The green area deals with the training of machine learning models discussed in Chapter 4 and 5.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Depending on the framework or workflow different machine learning (ML) methods of text detection and transcription will be used. It is also key to understand that from a practical computer science perspective the problem of HTR/OCR is solved. Although algorithmic improvements will continue to be developed the current state-of-the-art machine learning (ML) methods perform well for many applications. Most of these algorithms, in the abstract, are relatively easy to understand and with today’s software libraries and platforms even quicker to implement. I will briefly discuss various algorithms in section XYZ. A list of common frameworks and software is given in chapters XYZ.</p>
+<p>Depending on the framework or workflow different machine learning (ML) methods of text detection and transcription will be used. It is also key to understand that from a practical computer science perspective the problem of HTR/OCR is solved. Although algorithmic improvements will continue to be developed the current state-of-the-art machine learning (ML) methods perform well for many applications. Most of these algorithms, in the abstract, are relatively easy to understand and with today’s software libraries and platforms even quicker to implement. I will briefly discuss various algorithms in <a href="machine_learning.html" class="quarto-xref"><span>Chapter 4</span></a>. A list of common frameworks and software is given in <a href="software.html" class="quarto-xref"><span>Chapter 6</span></a> .</p>
 
 
 </section>

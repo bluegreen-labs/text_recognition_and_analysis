@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Digitization – Text digitization, recognition and analysis</title>
+<title>3&nbsp; Pre-processing – Text digitization, recognition and analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./pre-processing.html" rel="next">
-<link href="./intro.html" rel="prev">
+<link href="./machine_learning.html" rel="next">
+<link href="./digitization.html" rel="prev">
 <link href="./figures/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -73,10 +73,9 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta name="twitter:title" content="2&nbsp; Digitization – Text digitization, recognition and analysis">
+<meta name="twitter:title" content="3&nbsp; Pre-processing – Text digitization, recognition and analysis">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="./images/background_comparison.gif">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 </head>
 
 <body class="nav-sidebar floating nav-fixed">
@@ -133,7 +132,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./digitization.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Digitization</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./pre-processing.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Pre-processing</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -159,13 +158,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./digitization.html" class="sidebar-item-text sidebar-link active">
+  <a href="./digitization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Digitization</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pre-processing.html" class="sidebar-item-text sidebar-link">
+  <a href="./pre-processing.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Pre-processing</span></span></a>
   </div>
 </li>
@@ -215,8 +214,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#basic-digitization-equipment" id="toc-basic-digitization-equipment" class="nav-link active" data-scroll-target="#basic-digitization-equipment"><span class="header-section-number">2.1</span> Basic digitization equipment</a></li>
-  <li><a href="#general-guidelines" id="toc-general-guidelines" class="nav-link" data-scroll-target="#general-guidelines"><span class="header-section-number">2.2</span> General guidelines</a></li>
+  <li><a href="#computer-vision" id="toc-computer-vision" class="nav-link active" data-scroll-target="#computer-vision"><span class="header-section-number">3.1</span> Computer vision</a></li>
+  <li><a href="#key-pre-processing-concepts" id="toc-key-pre-processing-concepts" class="nav-link" data-scroll-target="#key-pre-processing-concepts"><span class="header-section-number">3.2</span> Key pre-processing concepts</a></li>
   </ul>
 </nav>
     </div>
@@ -225,7 +224,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-digitization" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Digitization</span></span></h1>
+<h1 class="title"><span id="sec-pre-processing" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Pre-processing</span></span></h1>
 </div>
 
 
@@ -242,52 +241,30 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Although this reference manual focuses on text recognition and analysis it is important to note that digitization, and the quality of the images and the consistent collection of meta-data, is key to all subsequent processing. If you start a project where the digitization is not yet completed you should consider the importance of the digitization step within the context of all subsequent post-processing and text recognition workflows.</p>
-<p>The quality of the collected image data and the availability of meta-data has a profound impact on your workflow. Preemptively addressing image quality and meta-data issues can save significant time and effort, even when taking up some more time in planning and data collection.</p>
-<p>Common issues are the introduction of noise and lack of contrast of the text due to bleed through of the structure of the paper, or data on the other side of a page. Within the context of COBECORE a quick comparison between using either a black or white matte background showed a large jump in the noise level for a black matte. A white matte background was used in the final digitization to boost contrast.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div id="fig-contrast" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-contrast-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="./images/background_comparison.gif" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:30.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-contrast-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.1: Differences in text contrast when using different matte backgrounds, white or black, during digitization (note that the different white balance changes the overall tone of the image).
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<section id="basic-digitization-equipment" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="basic-digitization-equipment"><span class="header-section-number">2.1</span> Basic digitization equipment</h2>
-<p>A basic digitization setup consists of:</p>
-<ul>
-<li>a digital camera (DSLR or mirrorless equivalent) and high quality optics (~1000 EURO)</li>
-<li>a <a href="https://www.kentfaith.nl/KF09.086_94%22-240cm-camera-statief-lichtgewicht-reisstatief-22lbs-10kg-belasting-met-afneembare-monopod-voor-dslr-%20slr">tripod with a horizontal boom</a> or a reproduction table (~150 EURO)</li>
-<li>a (ring) light setup or plenty of available (natural) light casting no shadows, do not use flash lights (~50 EURO)</li>
-<li>a background matte (&lt;10 EURO)</li>
-<li>a fixation option to keep data records in place (think of magnets, binder klips etc.) (&lt;10 EURO)</li>
-</ul>
-<p>The most basic setup will cost you less than 1500 EURO. Using a good reproduction table and cold lights will cost more, but does not necessarily yield better results.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div id="fig-digitzation" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-digitzation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="./images/digistation.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-digitzation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.2: The COBECORE digitization station, including a reproduction stand, cold lights and ring light, a DSLR camera, a black matte background around the document, and a laptop computer with external hard drive for storage and backups.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
+<p>There are two main ML components to HTR/OCR transcription workflows (<a href="intro.html#fig-workflow" class="quarto-xref">Figure&nbsp;<span>1.1</span></a>), a segmentation component and a text transcription component. To understand the software (frameworks) for HTR/OCR solutions a brief introduction in ML and computer vision pre-processing methods is required. This allows you to understand potential pitfalls better.</p>
+<section id="computer-vision" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="computer-vision"><span class="header-section-number">3.1</span> Computer vision</h2>
+<p>Although <a href="https://en.wikipedia.org/wiki/Computer_vision">computer vision</a> methods, broadly, include ML methods the classical approaches differ significantly from ML methods. Classic computer vision methods are applied on pixel (region) or image based transformation. These methods are often used in the pre-processing of images before a machine learning algorithm is applied <a href="intro.html#fig-workflow" class="quarto-xref">Figure&nbsp;<span>1.1</span></a>. In particular, the removal of noise, boosting of text contrast and creation of evenly lighted documents are common pre-processing steps.</p>
+<p>These algorithms also serve an important role in the creation of additional (synthetic) data from a single reference dataset, through data augmentation <a href="data.html#fig-data-augmentation" class="quarto-xref">Figure&nbsp;<span>5.1</span></a>, in order to increase a machine learning model robustness.</p>
 </section>
-<section id="general-guidelines" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="general-guidelines"><span class="header-section-number">2.2</span> General guidelines</h2>
-<p>In addition to the physical setup of the camera and lights, you will need a computer with sufficient storage capacity and a (institutional) backup solution. To ensure consistent digitization a protocol should be written to detail a fixed sequence of tasks, including the collection of meta-data. Finally, if these aspects are not within your domain of expertise reach out to your local collection managers for support and input!</p>
+<section id="key-pre-processing-concepts" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="key-pre-processing-concepts"><span class="header-section-number">3.2</span> Key pre-processing concepts</h2>
+<p>Classical examples are the removal of <a href="https://en.wikipedia.org/wiki/Adaptive_histogram_equalization">uneven lighting across an image using (contrast limited) adaptive histogram equalization (CLAHE)</a>, the detection and removal of structuring elements such as <a href="https://en.wikipedia.org/wiki/Hough_transform">linear features using a Hough transform</a>, or the <a href="https://en.wikipedia.org/wiki/Thresholding_(image_processing)">adaptive thresholding of an image</a> from colour to black-and-white only.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-cv" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cv-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://docs.opencv.org/3.4/ada_threshold.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cv-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.1: Example of various thresholding methods as implemented in the OpenCV computer vision library (https://opencv.org)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Other common methods are the use of <a href="https://docs.opencv.org/4.11.0/d5/d69/tutorial_py_non_local_means.html">Non-Local Means de-noising</a> to remove stochastic noise. Other <a href="https://en.wikipedia.org/wiki/Fast_Fourier_transform">Fast Fourier Transform (FFT)</a> based methods can be applied to <a href="https://docs.opencv.org/4.11.0/d2/d0b/tutorial_periodic_noise_removing_filter.html">remove periodic noise</a> by manipulating the frequency domain of the image.</p>
 
 
 </section>
@@ -856,13 +833,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./intro.html" class="pagination-link" aria-label="Introduction">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
+      <a href="./digitization.html" class="pagination-link" aria-label="Digitization">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Digitization</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./pre-processing.html" class="pagination-link" aria-label="Pre-processing">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Pre-processing</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./machine_learning.html" class="pagination-link" aria-label="Machine Learning">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Machine Learning</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

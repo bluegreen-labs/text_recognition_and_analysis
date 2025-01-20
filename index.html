@@ -43,8 +43,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-7e4af58bafdf0ee8a2668619ecca0679.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-6284fece335cc2e32bd4191e650e0cb2.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-63d57e0854a13fa29d5ca5abb38cbcb0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-ecf0e563fd50954ab5b16c08fb161912.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -165,26 +165,38 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./ml_methods.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Computer vision and machine learning</span></span></a>
+  <a href="./pre-processing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Pre-processing</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./machine_learning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Machine Learning</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data (generation)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./software.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">HTR/OCR software and data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">HTR/OCR software</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./project_management.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Project management</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Project management</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./tips_tricks.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tips and tricks</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Tips and tricks</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -243,8 +255,21 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="preface" class="level1 unnumbered">
 <h1 class="unnumbered">Preface</h1>
-<p>These are the materials for the course “Text recognition and analysis, 6-7 Feb.&nbsp;2025” at the Leibniz-Institut für Europäische Geschichte (IEG), Mainz, and in support of COBECORE project research efforts at the Free University Brussels, Belgium. This book will serve as a reference and as a general introduction for all things Handwritten Text Recognition/Optical Character Recognition (HTR/OCR).</p>
-<p>This reference gives an overview of the most common tools for historical (handwritten) text recognition, but can be applied elsewhere, too. In addition, I will also briefly discuss the initial digitization and potential citizen science components of such projects, leveraging my experience leading the <a href="https://cobecore.org/">Congo basin eco-climatological data recovery and valorisation project</a>. It will discuss the practical issues of such projects and how to resolve them efficiently and cost-effectively. This course is a practical tool, not a theoretical machine learning reference. This course will give you an idea of what it takes to start, and complete, a text recognition and analysis effort.</p>
+<p>These are the materials for the course “Text recognition and analysis, 6-7 Feb.&nbsp;2025” at the Leibniz-Institut für Europäische Geschichte (IEG), Mainz, with lessons learned from from the extension of the <a href="https://cobecore.org/">Congo basin eco-climatological data recovery and valorisation (COBECORE) project</a> research efforts with the Free University Brussels, Belgium. This document will serve as a (personal) reference and as a general introduction for all things Handwritten Text Recognition/Optical Character Recognition (HTR/OCR).</p>
+<p>This reference gives an overview of the most common tools and (data) pitfalls for historical (handwritten) text recognition, but it can be applied elsewhere, too. In addition, I will also briefly discuss the initial digitization and potential citizen science components of such projects, leveraging my experience leading the COBECORE project. I will discuss the practical issues of text recognition projects and how to resolve them efficiently and cost-effectively. This reference is a practical tool, not an introduction to machine learning. This reference will give you guidance on what it takes to start, and complete, a text recognition and analysis effort.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is not a machine learning reference! Drastic simplifications are made, using analogies, for the sake of clarity due to the interdisciplinary nature of transcription projects. Computer and data science majors might find these references “wrong”. However, the goals is not to be mathematically correct, but to communicate the processes of a text recognition project broadly.</p>
+</div>
+</div>
 
 
 </section>

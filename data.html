@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Digitization – Text digitization, recognition and analysis</title>
+<title>5&nbsp; Data (generation) – Text digitization, recognition and analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./pre-processing.html" rel="next">
-<link href="./intro.html" rel="prev">
+<link href="./software.html" rel="next">
+<link href="./machine_learning.html" rel="prev">
 <link href="./figures/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -73,9 +73,9 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta name="twitter:title" content="2&nbsp; Digitization – Text digitization, recognition and analysis">
+<meta name="twitter:title" content="5&nbsp; Data (generation) – Text digitization, recognition and analysis">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="./images/background_comparison.gif">
+<meta name="twitter:image" content="./images/image_augmentation.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -133,7 +133,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./digitization.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Digitization</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./data.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data (generation)</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -159,7 +159,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./digitization.html" class="sidebar-item-text sidebar-link active">
+  <a href="./digitization.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Digitization</span></span></a>
   </div>
 </li>
@@ -177,7 +177,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./data.html" class="sidebar-item-text sidebar-link">
+  <a href="./data.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data (generation)</span></span></a>
   </div>
 </li>
@@ -215,8 +215,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#basic-digitization-equipment" id="toc-basic-digitization-equipment" class="nav-link active" data-scroll-target="#basic-digitization-equipment"><span class="header-section-number">2.1</span> Basic digitization equipment</a></li>
-  <li><a href="#general-guidelines" id="toc-general-guidelines" class="nav-link" data-scroll-target="#general-guidelines"><span class="header-section-number">2.2</span> General guidelines</a></li>
+  <li><a href="#sec-annotating" id="toc-sec-annotating" class="nav-link active" data-scroll-target="#sec-annotating"><span class="header-section-number">5.1</span> Annotating</a>
+  <ul class="collapse">
+  <li><a href="#citizen-science" id="toc-citizen-science" class="nav-link" data-scroll-target="#citizen-science"><span class="header-section-number">5.1.1</span> Citizen science</a></li>
+  </ul></li>
+  <li><a href="#data-augmentation" id="toc-data-augmentation" class="nav-link" data-scroll-target="#data-augmentation"><span class="header-section-number">5.2</span> Data augmentation</a>
+  <ul class="collapse">
+  <li><a href="#synthetic-data" id="toc-synthetic-data" class="nav-link" data-scroll-target="#synthetic-data"><span class="header-section-number">5.2.1</span> Synthetic data</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -225,7 +231,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-digitization" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Digitization</span></span></h1>
+<h1 class="title"><span id="sec-data" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data (generation)</span></span></h1>
 </div>
 
 
@@ -242,54 +248,43 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Although this reference manual focuses on text recognition and analysis it is important to note that digitization, and the quality of the images and the consistent collection of meta-data, is key to all subsequent processing. If you start a project where the digitization is not yet completed you should consider the importance of the digitization step within the context of all subsequent post-processing and text recognition workflows.</p>
-<p>The quality of the collected image data and the availability of meta-data has a profound impact on your workflow. Preemptively addressing image quality and meta-data issues can save significant time and effort, even when taking up some more time in planning and data collection.</p>
-<p>Common issues are the introduction of noise and lack of contrast of the text due to bleed through of the structure of the paper, or data on the other side of a page. Within the context of COBECORE a quick comparison between using either a black or white matte background showed a large jump in the noise level for a black matte. A white matte background was used in the final digitization to boost contrast.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div id="fig-contrast" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-contrast-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="./images/background_comparison.gif" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:30.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-contrast-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.1: Differences in text contrast when using different matte backgrounds, white or black, during digitization (note that the different white balance changes the overall tone of the image).
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<section id="basic-digitization-equipment" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="basic-digitization-equipment"><span class="header-section-number">2.1</span> Basic digitization equipment</h2>
-<p>A basic digitization setup consists of:</p>
-<ul>
-<li>a digital camera (DSLR or mirrorless equivalent) and high quality optics (~1000 EURO)</li>
-<li>a <a href="https://www.kentfaith.nl/KF09.086_94%22-240cm-camera-statief-lichtgewicht-reisstatief-22lbs-10kg-belasting-met-afneembare-monopod-voor-dslr-%20slr">tripod with a horizontal boom</a> or a reproduction table (~150 EURO)</li>
-<li>a (ring) light setup or plenty of available (natural) light casting no shadows, do not use flash lights (~50 EURO)</li>
-<li>a background matte (&lt;10 EURO)</li>
-<li>a fixation option to keep data records in place (think of magnets, binder klips etc.) (&lt;10 EURO)</li>
-</ul>
-<p>The most basic setup will cost you less than 1500 EURO. Using a good reproduction table and cold lights will cost more, but does not necessarily yield better results.</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div id="fig-digitzation" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-digitzation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="./images/digistation.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-digitzation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.2: The COBECORE digitization station, including a reproduction stand, cold lights and ring light, a DSLR camera, a black matte background around the document, and a laptop computer with external hard drive for storage and backups.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
+<p>Methodologically (see <a href="machine_learning.html" class="quarto-xref"><span>Chapter 4</span></a> and <a href="software.html" class="quarto-xref"><span>Chapter 6</span></a>) the problem of text transcription seems to be solved, with various software solutions available. So, what is holding back (universal) open-source HTR/OCR? Generally, <strong>data</strong> is what holds back HTR in practice.</p>
+<p>Given the many variations in handwritten text, machine learning algorithms need to be trained (“see”) a wide variety of handwritten text characters to be able to translate similarly styled handwritten text, and potentially apply this to other adjacent styles. How close two documents are in writing style determines how well a trained model will perform on this task.</p>
+<p>To use the XKCD cartoon (<a href="machine_learning.html#fig-training" class="quarto-xref">Figure&nbsp;<span>4.1</span></a>), your (input) data does not resemble the pile used to train the model. Handwritten text or old print is highly varying in shape form and retained quality. This pushes trained models towards poor performance as the chances of good Out-of-Distribution (OOD) generalization are small. In short, two text styles are rarely the same or not similar enough for a trained model to be transferred to a new, seemingly similar, transcription task. Consequently, the more variations in handwritten text styles you train a machine learning algorithm on the easier it will be to transcribe a wide variety of text styles. In short, the bottleneck in automated transcription is gathering sufficient training data (for your use case).</p>
+<p>Although the ML code might be open-source many large training datasets are not always shared as generously. It can be argued that within the context of FAIR research practices machine learning code disseminated without the training data, or model parameters, for a particular study is decidedly not open science. A similar argument has been made within the context of the recent flurry of supposedly open-source Large Language Models (LLMs), such as ChatGPT.</p>
+<p>The lack of access to both the training data, or a pre-trained model, limits the re-use of the model in a new context. One cannot take a model and fine-tune it, i.e.&nbsp;let it “see” new text styles to learn from. In short, if you only have the underlying model code you always have to train a model from scratch (anew) using your own, often limited, dataset. This context is important to understand, as this is how transcription platforms will keep you tied to their paying service. Increasingly the need to share data and models openly has come into focus. For example <a href="https://github.com/HTR-United/htr-united">HTR United</a> is an ininiative to collect various HTR/OCR transcription datasets using a common meta-data scheme to break this pattern.</p>
+<section id="sec-annotating" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="sec-annotating"><span class="header-section-number">5.1</span> Annotating</h2>
+<p>One of the ways to fix OOD issues of machine learning models is to annotate representative data and retrain your model using these data. Conceptually this annotation process is easy. However, text annotation is a time consuming and often difficult process. It combines the need for domain knowledge (skills such as reading of cursive are becoming rare) with a very tedious task. The goal is not to understand the text but to merely gather training data. Some of the software solutions (See <a href="software.html" class="quarto-xref"><span>Chapter 6</span></a>) such as eScriptorium, Transkribus, OCR4all provide annotation abilities within their platform. Other options are using open source annotation software/platforms such as <a href="https://www.cvat.ai/">CVAT.ai</a>.</p>
+<section id="citizen-science" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="citizen-science"><span class="header-section-number">5.1.1</span> Citizen science</h3>
+<p>Alternative options to create training data include the use of <a href="">community/citizen science</a> platforms, such as <a href="https://www.zooniverse.org/">Zooniverse</a>. Here, the annotation of texts is outsourced to volunteers. This works well assuming that the text to be transcribed has a sizable user base. A language which is only written by a small number of people is less likely to be easily transcribed, as many replicates are required for quality control. It must be noted that community/citizen science is not a way to get “free data”. When done properly there should be a good rapport between the community which one engages, and the scientists executing the research.</p>
 </section>
-<section id="general-guidelines" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="general-guidelines"><span class="header-section-number">2.2</span> General guidelines</h2>
-<p>In addition to the physical setup of the camera and lights, you will need a computer with sufficient storage capacity and a (institutional) backup solution. To ensure consistent digitization a protocol should be written to detail a fixed sequence of tasks, including the collection of meta-data. Finally, if these aspects are not within your domain of expertise reach out to your local collection managers for support and input!</p>
+</section>
+<section id="data-augmentation" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="data-augmentation"><span class="header-section-number">5.2</span> Data augmentation</h2>
+<p>Sufficient data is key in training a ML model which performs well. However, at times you might be limited in the data you can access for training, even after gathering additional annotations. Data augmentation is a way to slightly alter a smaller existing dataset in order to create a larger, partially, artificial dataset. Within the context of HTR/OCR one can generate slight variations of the same text image and label pair through computer vision (or machine learning) based alterations, such as rotating skewing and introducing noise to the image.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-data-augmentation" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-data-augmentation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./images/image_augmentation.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data-augmentation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.1: Data augmentation examples on the French word Juillet
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Do not underestimate the power of image augmentation to make your HTR/OCR algorithm more robust. Where you have control over this process it is advisable to use it (in some of the platforms it is automatically integrated in model training steps). In this context, it is also generally a poor idea to apply extensive computer vision based pre-processing (see <a href="pre-processing.html" class="quarto-xref"><span>Chapter 3</span></a> ) to the text, outside proper cropping or aligning of the pages. Especially, binarization of images (converting from RGB to black and white only) can produce unstable HTR output, as the pre-processing step has an outside influence as it is linked to data loss. Conversely, image augmentation by introducing noise can make results more robust to these disturbances, real or not.</p>
+<section id="synthetic-data" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="synthetic-data"><span class="header-section-number">5.2.1</span> Synthetic data</h3>
+<p>Taking image augmentation to the extreme is the <a href="https://arxiv.org/html/2402.10798">creation of synthetic data</a>. Here, you don not transform original data but create a fully artificial dataset. This approach often requires custom scripts, but might be a way to sidestep the annotation of texts.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -856,13 +851,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./intro.html" class="pagination-link" aria-label="Introduction">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
+      <a href="./machine_learning.html" class="pagination-link" aria-label="Machine Learning">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Machine Learning</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./pre-processing.html" class="pagination-link" aria-label="Pre-processing">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Pre-processing</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./software.html" class="pagination-link" aria-label="HTR/OCR software">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">HTR/OCR software</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
